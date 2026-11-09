@@ -1,0 +1,9 @@
+# large or third-party material is never committed
+models/
+data_cache*/
+venv*/
+*.keras
+*.pkl
+__pycache__/
+data/supplementary/
+data/gard/
