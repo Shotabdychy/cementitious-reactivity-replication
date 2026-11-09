@@ -1,0 +1,5 @@
+# keep shell scripts runnable on Linux/macOS regardless of the checkout platform
+*.sh text eol=lf
+*.docx binary
+*.pdf binary
+*.png binary
