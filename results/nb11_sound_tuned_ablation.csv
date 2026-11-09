@@ -1,0 +1,49 @@
+variant,d5,fe,mix,model,row_filter,reactive,paper,pct_vs_paper
+base,False,False,False,ensemble,all rows,141548,50569,179.9
+base,False,False,False,ensemble,>=1 measured oxide,141548,50569,179.9
+base,False,False,False,ensemble,SiO2+Al2O3+CaO,129355,50569,155.8
+base,False,False,False,single seed42,all rows,290959,50569,475.4
+base,False,False,False,single seed42,>=1 measured oxide,290959,50569,475.4
+base,False,False,False,single seed42,SiO2+Al2O3+CaO,269893,50569,433.7
+mix,False,False,True,ensemble,all rows,577417,50569,1041.8
+mix,False,False,True,ensemble,>=1 measured oxide,576858,50569,1040.7
+mix,False,False,True,ensemble,SiO2+Al2O3+CaO,566941,50569,1021.1
+mix,False,False,True,single seed42,all rows,960400,50569,1799.2
+mix,False,False,True,single seed42,>=1 measured oxide,633054,50569,1151.9
+mix,False,False,True,single seed42,SiO2+Al2O3+CaO,600954,50569,1088.4
+fe,False,True,False,ensemble,all rows,119593,50569,136.5
+fe,False,True,False,ensemble,>=1 measured oxide,119593,50569,136.5
+fe,False,True,False,ensemble,SiO2+Al2O3+CaO,111303,50569,120.1
+fe,False,True,False,single seed42,all rows,295396,50569,484.1
+fe,False,True,False,single seed42,>=1 measured oxide,295387,50569,484.1
+fe,False,True,False,single seed42,SiO2+Al2O3+CaO,280878,50569,455.4
+fe+mix,False,True,True,ensemble,all rows,580477,50569,1047.9
+fe+mix,False,True,True,ensemble,>=1 measured oxide,579908,50569,1046.8
+fe+mix,False,True,True,ensemble,SiO2+Al2O3+CaO,568308,50569,1023.8
+fe+mix,False,True,True,single seed42,all rows,620978,50569,1128.0
+fe+mix,False,True,True,single seed42,>=1 measured oxide,620597,50569,1127.2
+fe+mix,False,True,True,single seed42,SiO2+Al2O3+CaO,589966,50569,1066.7
+d5,True,False,False,ensemble,all rows,74575,50569,47.5
+d5,True,False,False,ensemble,>=1 measured oxide,74575,50569,47.5
+d5,True,False,False,ensemble,SiO2+Al2O3+CaO,70699,50569,39.8
+d5,True,False,False,single seed42,all rows,334108,50569,560.7
+d5,True,False,False,single seed42,>=1 measured oxide,334108,50569,560.7
+d5,True,False,False,single seed42,SiO2+Al2O3+CaO,325807,50569,544.3
+d5+mix,True,False,True,ensemble,all rows,586091,50569,1059.0
+d5+mix,True,False,True,ensemble,>=1 measured oxide,585606,50569,1058.0
+d5+mix,True,False,True,ensemble,SiO2+Al2O3+CaO,575407,50569,1037.9
+d5+mix,True,False,True,single seed42,all rows,632273,50569,1150.3
+d5+mix,True,False,True,single seed42,>=1 measured oxide,631522,50569,1148.8
+d5+mix,True,False,True,single seed42,SiO2+Al2O3+CaO,609326,50569,1104.9
+d5+fe,True,True,False,ensemble,all rows,64239,50569,27.0
+d5+fe,True,True,False,ensemble,>=1 measured oxide,64239,50569,27.0
+d5+fe,True,True,False,ensemble,SiO2+Al2O3+CaO,61514,50569,21.6
+d5+fe,True,True,False,single seed42,all rows,301611,50569,496.4
+d5+fe,True,True,False,single seed42,>=1 measured oxide,301611,50569,496.4
+d5+fe,True,True,False,single seed42,SiO2+Al2O3+CaO,296358,50569,486.0
+d5+fe+mix,True,True,True,ensemble,all rows,567816,50569,1022.9
+d5+fe+mix,True,True,True,ensemble,>=1 measured oxide,567543,50569,1022.3
+d5+fe+mix,True,True,True,ensemble,SiO2+Al2O3+CaO,556478,50569,1000.4
+d5+fe+mix,True,True,True,single seed42,all rows,627420,50569,1140.7
+d5+fe+mix,True,True,True,single seed42,>=1 measured oxide,627103,50569,1140.1
+d5+fe+mix,True,True,True,single seed42,SiO2+Al2O3+CaO,597631,50569,1081.8

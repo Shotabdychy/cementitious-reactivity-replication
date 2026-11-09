@@ -1,0 +1,38 @@
+{
+ "n_tables": 6,
+ "n_main": 4,
+ "notebook5_mean_f1_relevance": 1.0,
+ "notebook5_relevance_accuracy": 1.0,
+ "notebook5_mean_f1_materials": 0.3125,
+ "notebook5_mean_f1_compositions": 0.8333333333333334,
+ "notebook5_mean_rmse": 4.189302134935898,
+ "standard_mean_material_f1": 0.75,
+ "standard_mean_cell_f1": 0.75,
+ "standard_total_cells": 241,
+ "standard_total_exact": 240,
+ "standard_total_within_0p1": 240,
+ "standard_total_missed": 0,
+ "standard_total_invented": 0,
+ "paper_table_G3_ft_gpt35": {
+  "relevance_train": 0.92,
+  "relevance_test": 0.95,
+  "materials_train": 1.0,
+  "materials_test": 0.83,
+  "compositions_train": 0.99,
+  "compositions_test": 0.93,
+  "rmse_train": 1.49,
+  "rmse_test": 2.81,
+  "avg_time_s": 6.87
+ },
+ "note": "Dataset 2 is the authors' fine-tuning set. Notebook 4 splits it 90/10 with no fixed seed, so which of the 200 tables were their test rows is not recoverable; the Table G3 train and test columns are both shown for reference.",
+ "vs_dataset1": {
+  "materials_mine": 43,
+  "materials_dataset1": 39,
+  "materials_shared": 25,
+  "cells_both_present": 193,
+  "cells_exact": 192,
+  "cells_within_0p1": 192,
+  "cells_in_d1_not_mine": 0,
+  "cells_in_mine_not_d1": 5
+ }
+}

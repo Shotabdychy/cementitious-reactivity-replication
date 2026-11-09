@@ -1,0 +1,7 @@
+### supplementary verification (written 2026-11-10)
+# 1. full 8-variant rock ablation: regenerated from scratch after the base-only verification run had overwritten it, compared with the first run (48 rows)
+  nb11_sound_tuned_ablation.csv: IDENTICAL
+# 2. few-papers scoring re-run after the name-matcher fix, compared with the output of the previous run of the fixed code
+  scores_summary.json: IDENTICAL
+  metrics_standard.csv: IDENTICAL
+# note: the 'scores_summary.json: IDENTICAL' line in logs/verify.log compares against the matcher used before the fix and is superseded by the counts reported in the report (241 cells, 3 tables)

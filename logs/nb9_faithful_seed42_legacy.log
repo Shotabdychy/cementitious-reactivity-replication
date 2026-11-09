@@ -1,0 +1,10 @@
+[faithful seed 42 |     2s] R3 rows 1849  labels {'heat release': 1319, 'CH consumption': 192, 'Bound water': 277}
+[faithful seed 42 |     6s] stratified (notebook key: bins on unstandardized, digitize on standardized); train 1479 test 370
+[faithful seed 42 |     6s] test labels {'heat release': 264, 'CH consumption': 39, 'Bound water': 55}
+[faithful seed 42 |    10s] loss weights {'Heat_Release_Output': 0.2622, 'CH_Consumption_Output': 4.465, 'Bound_Water_Output': 0.8448}
+[faithful seed 42 |   191s] stopped after 647 epochs; monitored value at epoch 1 = 1.4202e+06; restored epoch 447; monitored value there 235.456; non-finite epochs 0/647
+[faithful seed 42 |   191s] COLLAPSED early stopping: monitored nRMSE > 1 (range term degenerate)
+[faithful seed 42 |   194s] heat release    train R2=+0.966  test R2=+0.871 RMSE=48.55 (n=264)
+[faithful seed 42 |   194s] CH consumption  train R2=+0.904  test R2=+0.127 RMSE=28.87 (n=39)
+[faithful seed 42 |   194s] Bound water     train R2=+0.980  test R2=+0.806 RMSE=2.05 (n=55)
+[faithful seed 42 |   195s] done

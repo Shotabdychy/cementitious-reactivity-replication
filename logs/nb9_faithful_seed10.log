@@ -1,0 +1,20 @@
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+[faithful seed 10 |     0s] R3 rows 1849  labels {'heat release': 1319, 'CH consumption': 192, 'Bound water': 277}
+[faithful seed 10 |     1s] stratified (notebook key: bins on unstandardized, digitize on standardized); train 1479 test 370
+[faithful seed 10 |     1s] test labels {'heat release': 264, 'CH consumption': 39, 'Bound water': 55}
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+[faithful seed 10 |     2s] loss weights {'Heat_Release_Output': 0.2622, 'CH_Consumption_Output': 4.465, 'Bound_Water_Output': 0.8448}
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\engine\base_layer_utils.py:384: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+[faithful seed 10 |   105s] stopped after 319 epochs; monitored value at epoch 1 = 1.91818e+06; restored epoch 119; monitored value there 603.662; non-finite epochs 0/319
+[faithful seed 10 |   105s] COLLAPSED early stopping: monitored nRMSE > 1 (range term degenerate)
+[faithful seed 10 |   106s] heat release    train R2=+0.932  test R2=+0.834 RMSE=55.16 (n=264)
+[faithful seed 10 |   106s] CH consumption  train R2=+0.858  test R2=+0.360 RMSE=24.72 (n=39)
+[faithful seed 10 |   106s] Bound water     train R2=+0.795  test R2=+0.846 RMSE=1.82 (n=55)
+[faithful seed 10 |   107s] done

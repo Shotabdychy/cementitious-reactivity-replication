@@ -1,0 +1,44 @@
+d2_row,material,my_category,dataset1_category,paired,agree
+191,SNM 1,Others,Others,exact name,True
+191,SNM 2,Others,Others,exact name,True
+191,SNM 3,Others,Others,exact name,True
+191,SNM 4,Others,Others,exact name,True
+191,SNM 5,Others,Others,exact name,True
+191,SNM 6,Others,Others,exact name,True
+191,SNM 7,Others,Others,exact name,True
+191,SNM 8,Others,Others,exact name,True
+191,SNM 9,Others,Others,exact name,True
+191,SNM 10,Others,Others,exact name,True
+191,SNM 11,Others,Others,exact name,True
+191,SNM 12,Others,Others,exact name,True
+191,SNM 13,Others,Others,exact name,True
+191,SNM 14,Others,,no,
+191,SNM 15,Others,,no,
+191,SNM 16,Others,,no,
+107,PC1,Cements,,no,
+107,PC2,Cements,,no,
+107,PC3,Cements,,no,
+107,PC4,Cements,,no,
+107,PC5,Cements,,no,
+107,PC6,Cements,,no,
+107,PC7,Cements,,no,
+107,PC8,Cements,,no,
+107,PC9,Cements,,no,
+107,SC1,Cements,,no,
+107,SC2,Cements,,no,
+107,SC3,Cements,,no,
+107,PL1,Cements,,no,
+107,PL2,Cements,,no,
+105,Fresh I,Other byproduct/wastes,Cements,exact name,False
+105,Fresh II,Other byproduct/wastes,Cements,exact name,False
+105,B1-F,Other byproduct/wastes,Cements,exact name,False
+105,B2-C,Other byproduct/wastes,Cements,exact name,False
+105,B2-F,Other byproduct/wastes,Cements,exact name,False
+105,B2-I,Other byproduct/wastes,Cements,exact name,False
+105,B3-B,Other byproduct/wastes,,no,
+105,B3-D,Other byproduct/wastes,Cements,exact name,False
+1,PC,Cements,Cements,exact name,True
+1,HL1,Fly ashes,Fly ashes,exact name,True
+1,HL2,Fly ashes,Others,exact name,False
+1,LL1,Fly ashes,Others,exact name,False
+1,LL2,Fly ashes,Others,exact name,False

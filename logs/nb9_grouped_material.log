@@ -1,0 +1,30 @@
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+[grouped_material |      0s] configuration: tuned, from <project>\Assignment-2\results\nb9_tuned_config.json (cv_score 0.17236470419501065)
+[grouped_material |      0s] CFG = {'lr': 0.002329762074885538, 'dropout': 0.2, 'l2': 0.001, 'widths': [512, 256, 32], 'batch': 128, 'ch_mult': 10.0, 'weighting': 'equal', 'patience': 70}
+[grouped_material |      0s] outer split: grouped by material (277 groups) (split_seed 0); train 1430 test 419
+[grouped_material |      0s] labelled rows  train {'heat release': 1008, 'CH consumption': 147, 'Bound water': 218}  test {'heat release': 311, 'CH consumption': 45, 'Bound water': 59}
+[grouped_material |      2s] feature imputation: train-rows; scaler and target standardization fitted on the 1430 training rows only
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\engine\base_layer_utils.py:384: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+[grouped_material |     20s] seed  42: epochs  109 best   39 val_crit 0.27912 | test R2 heat +0.614 CH -0.139 BW +0.504
+[grouped_material |     45s] seed   1: epochs  145 best   75 val_crit 0.64686 | test R2 heat +0.626 CH -0.270 BW +0.450
+[grouped_material |     62s] seed   2: epochs   95 best   25 val_crit 0.17630 | test R2 heat +0.632 CH +0.045 BW +0.596
+[grouped_material |     93s] seed   3: epochs  172 best  102 val_crit 0.39989 | test R2 heat +0.644 CH -0.030 BW +0.395
+[grouped_material |    136s] seed   4: epochs  199 best  129 val_crit 0.54011 | test R2 heat +0.612 CH -0.216 BW +0.546
+[grouped_material |    184s] seed   5: epochs  268 best  198 val_crit 0.48019 | test R2 heat +0.493 CH -0.097 BW +0.491
+[grouped_material |    233s] seed   6: epochs  205 best  135 val_crit 0.28823 | test R2 heat +0.617 CH -0.037 BW +0.584
+[grouped_material |    294s] seed   7: epochs  260 best  190 val_crit 0.17966 | test R2 heat +0.591 CH -0.116 BW +0.492
+[grouped_material |    342s] seed   8: epochs  216 best  146 val_crit 0.24176 | test R2 heat +0.510 CH -0.121 BW +0.543
+[grouped_material |    395s] seed   9: epochs  287 best  217 val_crit 0.49965 | test R2 heat +0.628 CH +0.084 BW +0.535
+[grouped_material |    482s] seed  10: epochs  361 best  291 val_crit 0.34955 | test R2 heat +0.639 CH -0.058 BW +0.530
+[grouped_material |    483s] per-seed test R2 mean +- SD: heat +0.600 +- 0.051 (min +0.493, max +0.644) | CH -0.087 +- 0.104 (min -0.270, max +0.084) | BW +0.515 +- 0.058 (min +0.395, max +0.596)
+[grouped_material |    502s] ENSEMBLE of 11 seeds, test: heat R2 +0.645 [+0.500,+0.755] RMSE 88.68 | CH R2 -0.061 [-0.606,+0.320] RMSE 48.43 | BW R2 +0.548 [+0.287,+0.733] RMSE 4.56
+[grouped_material |    502s] ENSEMBLE of 11 seeds, train: heat R2 +0.953 RMSE 28.29 | CH R2 +0.957 RMSE 6.78 | BW R2 +0.971 RMSE 0.76
+[grouped_material |    502s] paper (test): heat R2 0.93 RMSE 28.2 | CH R2 0.85 RMSE 12.17 | BW R2 0.89 RMSE 1.47
+[grouped_material |    504s] wrote results/nb9_grouped_material.json, results/nb9_grouped_material_predictions.csv, models/grouped_material/
+[grouped_material |    504s] done

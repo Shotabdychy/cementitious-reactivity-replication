@@ -1,0 +1,17 @@
+### saving the first run as the baseline
+  saved nb9_faithful_seed42.json
+  saved nb9_clean_seed42.json
+  saved nb9_sound_tuned.json
+  saved nb10_sound_tuned_summary_by_category.csv
+  saved nb11_sound_tuned_ablation.csv
+  saved few_papers/scores_summary.json
+### clearing the cache so every table is rebuilt
+### re-running
+### comparison (wall-clock and environment fields ignored)
+  nb9_faithful_seed42.json: IDENTICAL
+  nb9_clean_seed42.json: IDENTICAL
+  nb9_sound_tuned.json: IDENTICAL
+  nb10_sound_tuned_summary_by_category.csv: IDENTICAL
+  nb11_sound_tuned_ablation.csv (variant 'base' only): IDENTICAL
+  scores_summary.json: IDENTICAL
+VERIFY DONE

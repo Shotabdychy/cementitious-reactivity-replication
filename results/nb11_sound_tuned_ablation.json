@@ -1,0 +1,728 @@
+{
+ "base": {
+  "factors": {
+   "d5": false,
+   "fe": false,
+   "mix": false
+  },
+  "amorphous": {
+   "mean": 56.39995859675367,
+   "median": 58.79503468868747,
+   "p10": 35.78058806115523,
+   "p90": 71.0087694246801,
+   "r3_measured_mean": 70.06194564648165,
+   "dataset5_measured_mean": 27.074050632911398
+  },
+  "rows": [
+   {
+    "model": "ensemble",
+    "reactive_all": 141548,
+    "reactive_any_oxide": 141548,
+    "reactive_has3": 129355,
+    "reactive_no_oxide": 0,
+    "n_no_oxide": 328466,
+    "inert": 51409,
+    "low": 829135,
+    "pozz_CH50": 72263,
+    "hydr_CH50": 69285,
+    "pozz_CH25": 133358,
+    "pozz_CH75": 789,
+    "heat_mean": 172.94300951505735,
+    "heat_median": 157.9078409366198,
+    "CH_mean": 31.685745653985922
+   },
+   {
+    "model": "single seed42",
+    "reactive_all": 290959,
+    "reactive_any_oxide": 290959,
+    "reactive_has3": 269893,
+    "reactive_no_oxide": 0,
+    "n_no_oxide": 328466,
+    "inert": 31834,
+    "low": 699299,
+    "pozz_CH50": 175961,
+    "hydr_CH50": 114998,
+    "pozz_CH25": 251513,
+    "pozz_CH75": 9049,
+    "heat_mean": 196.90081787109375,
+    "heat_median": 169.02947998046875,
+    "CH_mean": 41.93190383911133
+   }
+  ],
+  "per_seed_reactive_all": [
+   112700,
+   462245,
+   123978,
+   126582,
+   154055,
+   290959,
+   325490,
+   92639,
+   211069,
+   212637,
+   235308
+  ],
+  "n_rows": 1022092,
+  "n_any_oxide": 693626,
+  "n_has3": 651513,
+  "secs": 99.06293034553528
+ },
+ "pozzolanic_threshold_sweep_base": [
+  {
+   "CH_threshold": 0,
+   "pozzolanic": 141253,
+   "hydraulic": 295
+  },
+  {
+   "CH_threshold": 10,
+   "pozzolanic": 140258,
+   "hydraulic": 1290
+  },
+  {
+   "CH_threshold": 25,
+   "pozzolanic": 133358,
+   "hydraulic": 8190
+  },
+  {
+   "CH_threshold": 50,
+   "pozzolanic": 72263,
+   "hydraulic": 69285
+  },
+  {
+   "CH_threshold": 75,
+   "pozzolanic": 789,
+   "hydraulic": 140759
+  },
+  {
+   "CH_threshold": 100,
+   "pozzolanic": 528,
+   "hydraulic": 141020
+  }
+ ],
+ "rock_types_named": [
+  {
+   "rock_name": "anorthosite",
+   "n": 877,
+   "n_reactive": 451,
+   "n_any_oxide": 550,
+   "heat_median": 204.2844,
+   "heat_max": 618.3944,
+   "ratio": 0.5143
+  },
+  {
+   "rock_name": "ignimbrite",
+   "n": 824,
+   "n_reactive": 279,
+   "n_any_oxide": 770,
+   "heat_median": 180.4389,
+   "heat_max": 649.528,
+   "ratio": 0.3386
+  },
+  {
+   "rock_name": "porphyry",
+   "n": 1088,
+   "n_reactive": 390,
+   "n_any_oxide": 1018,
+   "heat_median": 175.9827,
+   "heat_max": 743.8033,
+   "ratio": 0.3585
+  },
+  {
+   "rock_name": "rhyolite",
+   "n": 36678,
+   "n_reactive": 10696,
+   "n_any_oxide": 29334,
+   "heat_median": 175.7648,
+   "heat_max": 1008.008,
+   "ratio": 0.2916
+  },
+  {
+   "rock_name": "andesite",
+   "n": 44998,
+   "n_reactive": 8716,
+   "n_any_oxide": 38063,
+   "heat_median": 168.4855,
+   "heat_max": 830.3301,
+   "ratio": 0.1937
+  },
+  {
+   "rock_name": "dacite",
+   "n": 20711,
+   "n_reactive": 5696,
+   "n_any_oxide": 18293,
+   "heat_median": 169.2453,
+   "heat_max": 898.4492,
+   "ratio": 0.275
+  },
+  {
+   "rock_name": "tuff",
+   "n": 5999,
+   "n_reactive": 770,
+   "n_any_oxide": 2912,
+   "heat_median": 147.3533,
+   "heat_max": 770.3921,
+   "ratio": 0.1284
+  },
+  {
+   "rock_name": "basalt",
+   "n": 171708,
+   "n_reactive": 21236,
+   "n_any_oxide": 139268,
+   "heat_median": 164.0356,
+   "heat_max": 824.4918,
+   "ratio": 0.1237
+  },
+  {
+   "rock_name": "granite",
+   "n": 32691,
+   "n_reactive": 5191,
+   "n_any_oxide": 24795,
+   "heat_median": 166.181,
+   "heat_max": 968.0627,
+   "ratio": 0.1588
+  },
+  {
+   "rock_name": "shale",
+   "n": 1674,
+   "n_reactive": 412,
+   "n_any_oxide": 1438,
+   "heat_median": 147.3533,
+   "heat_max": 735.8475,
+   "ratio": 0.2461
+  }
+ ],
+ "mix": {
+  "factors": {
+   "d5": false,
+   "fe": false,
+   "mix": true
+  },
+  "amorphous": {
+   "mean": 67.31017236241964,
+   "median": 66.60213661588521,
+   "p10": 51.664654142053074,
+   "p90": 82.83391175867098,
+   "r3_measured_mean": 70.06194564648165,
+   "dataset5_measured_mean": 27.074050632911398
+  },
+  "rows": [
+   {
+    "model": "ensemble",
+    "reactive_all": 577417,
+    "reactive_any_oxide": 576858,
+    "reactive_has3": 566941,
+    "reactive_no_oxide": 559,
+    "n_no_oxide": 328466,
+    "inert": 41138,
+    "low": 403537,
+    "pozz_CH50": 503610,
+    "hydr_CH50": 73807,
+    "pozz_CH25": 577105,
+    "pozz_CH75": 11998,
+    "heat_mean": 202.4521663658686,
+    "heat_median": 217.85965474933138,
+    "CH_mean": 47.16623676830861
+   },
+   {
+    "model": "single seed42",
+    "reactive_all": 960400,
+    "reactive_any_oxide": 633054,
+    "reactive_has3": 600954,
+    "reactive_no_oxide": 327346,
+    "n_no_oxide": 328466,
+    "inert": 18833,
+    "low": 42859,
+    "pozz_CH50": 500110,
+    "hydr_CH50": 460290,
+    "pozz_CH25": 949283,
+    "pozz_CH75": 16307,
+    "heat_mean": 248.45632934570312,
+    "heat_median": 238.12442016601562,
+    "CH_mean": 50.41001510620117
+   }
+  ],
+  "per_seed_reactive_all": [
+   450361,
+   492500,
+   587973,
+   571123,
+   540483,
+   960400,
+   551473,
+   509639,
+   519390,
+   603139,
+   567948
+  ],
+  "n_rows": 1022092,
+  "n_any_oxide": 693626,
+  "n_has3": 651513,
+  "secs": 86.23042845726013
+ },
+ "fe": {
+  "factors": {
+   "d5": false,
+   "fe": true,
+   "mix": false
+  },
+  "amorphous": {
+   "mean": 45.588860018779314,
+   "median": 47.04914132931948,
+   "p10": 31.466291808253008,
+   "p90": 60.3865719141531,
+   "r3_measured_mean": 70.06194564648165,
+   "dataset5_measured_mean": 27.074050632911398
+  },
+  "rows": [
+   {
+    "model": "ensemble",
+    "reactive_all": 119593,
+    "reactive_any_oxide": 119593,
+    "reactive_has3": 111303,
+    "reactive_no_oxide": 0,
+    "n_no_oxide": 328159,
+    "inert": 48248,
+    "low": 854251,
+    "pozz_CH50": 52197,
+    "hydr_CH50": 67396,
+    "pozz_CH25": 109090,
+    "pozz_CH75": 605,
+    "heat_mean": 162.31484237623297,
+    "heat_median": 151.54095313989336,
+    "CH_mean": 29.40019086173502
+   },
+   {
+    "model": "single seed42",
+    "reactive_all": 295396,
+    "reactive_any_oxide": 295387,
+    "reactive_has3": 280878,
+    "reactive_no_oxide": 9,
+    "n_no_oxide": 328159,
+    "inert": 28443,
+    "low": 698253,
+    "pozz_CH50": 153988,
+    "hydr_CH50": 141408,
+    "pozz_CH25": 257516,
+    "pozz_CH75": 2234,
+    "heat_mean": 192.27259826660156,
+    "heat_median": 172.7470703125,
+    "CH_mean": 39.91461944580078
+   }
+  ],
+  "per_seed_reactive_all": [
+   96552,
+   110232,
+   108518,
+   84723,
+   105443,
+   295396,
+   276395,
+   85882,
+   142139,
+   210671,
+   216590
+  ],
+  "n_rows": 1022092,
+  "n_any_oxide": 693933,
+  "n_has3": 651513,
+  "secs": 85.82785153388977
+ },
+ "fe+mix": {
+  "factors": {
+   "d5": false,
+   "fe": true,
+   "mix": true
+  },
+  "amorphous": {
+   "mean": 67.09623192525471,
+   "median": 70.00327121277707,
+   "p10": 55.17408237824082,
+   "p90": 85.22642975763516,
+   "r3_measured_mean": 70.06194564648165,
+   "dataset5_measured_mean": 27.074050632911398
+  },
+  "rows": [
+   {
+    "model": "ensemble",
+    "reactive_all": 580477,
+    "reactive_any_oxide": 579908,
+    "reactive_has3": 568308,
+    "reactive_no_oxide": 569,
+    "n_no_oxide": 328159,
+    "inert": 369413,
+    "low": 72202,
+    "pozz_CH50": 506229,
+    "hydr_CH50": 74248,
+    "pozz_CH25": 580231,
+    "pozz_CH75": 11161,
+    "heat_mean": 193.04796214857063,
+    "heat_median": 218.80044384849765,
+    "CH_mean": 46.40940488045892
+   },
+   {
+    "model": "single seed42",
+    "reactive_all": 620978,
+    "reactive_any_oxide": 620597,
+    "reactive_has3": 589966,
+    "reactive_no_oxide": 381,
+    "n_no_oxide": 328159,
+    "inert": 18325,
+    "low": 382789,
+    "pozz_CH50": 478818,
+    "hydr_CH50": 142160,
+    "pozz_CH25": 609916,
+    "pozz_CH75": 18164,
+    "heat_mean": 235.77389526367188,
+    "heat_median": 236.20632934570312,
+    "CH_mean": 48.2917366027832
+   }
+  ],
+  "per_seed_reactive_all": [
+   468059,
+   505648,
+   590564,
+   579461,
+   524248,
+   620978,
+   566937,
+   495407,
+   522973,
+   608758,
+   565417
+  ],
+  "n_rows": 1022092,
+  "n_any_oxide": 693933,
+  "n_has3": 651513,
+  "secs": 108.50424885749817
+ },
+ "d5": {
+  "factors": {
+   "d5": true,
+   "fe": false,
+   "mix": false
+  },
+  "amorphous": {
+   "mean": 27.063184354990963,
+   "median": 28.644167578253718,
+   "p10": 19.57379989490832,
+   "p90": 33.403521245497856,
+   "r3_measured_mean": 70.06194564648165,
+   "dataset5_measured_mean": 27.074050632911398
+  },
+  "rows": [
+   {
+    "model": "ensemble",
+    "reactive_all": 74575,
+    "reactive_any_oxide": 74575,
+    "reactive_has3": 70699,
+    "reactive_no_oxide": 0,
+    "n_no_oxide": 328466,
+    "inert": 426932,
+    "low": 520585,
+    "pozz_CH50": 39170,
+    "hydr_CH50": 35405,
+    "pozz_CH25": 69739,
+    "pozz_CH75": 383,
+    "heat_mean": 142.70758816017883,
+    "heat_median": 134.4080389392101,
+    "CH_mean": 24.865690461892637
+   },
+   {
+    "model": "single seed42",
+    "reactive_all": 334108,
+    "reactive_any_oxide": 334108,
+    "reactive_has3": 325807,
+    "reactive_no_oxide": 0,
+    "n_no_oxide": 328466,
+    "inert": 23414,
+    "low": 664570,
+    "pozz_CH50": 90753,
+    "hydr_CH50": 243355,
+    "pozz_CH25": 244318,
+    "pozz_CH75": 711,
+    "heat_mean": 183.50436401367188,
+    "heat_median": 187.00210571289062,
+    "CH_mean": 38.52853012084961
+   }
+  ],
+  "per_seed_reactive_all": [
+   60172,
+   70696,
+   81204,
+   46634,
+   68684,
+   334108,
+   125051,
+   75727,
+   62117,
+   106682,
+   125809
+  ],
+  "n_rows": 1022092,
+  "n_any_oxide": 693626,
+  "n_has3": 651513,
+  "secs": 113.85165500640869
+ },
+ "d5+mix": {
+  "factors": {
+   "d5": true,
+   "fe": false,
+   "mix": true
+  },
+  "amorphous": {
+   "mean": 65.17222489504825,
+   "median": 70.535858704546,
+   "p10": 50.57001787576294,
+   "p90": 83.16281010795605,
+   "r3_measured_mean": 70.06194564648165,
+   "dataset5_measured_mean": 27.074050632911398
+  },
+  "rows": [
+   {
+    "model": "ensemble",
+    "reactive_all": 586091,
+    "reactive_any_oxide": 585606,
+    "reactive_has3": 575407,
+    "reactive_no_oxide": 485,
+    "n_no_oxide": 328466,
+    "inert": 352586,
+    "low": 83415,
+    "pozz_CH50": 506148,
+    "hydr_CH50": 79943,
+    "pozz_CH25": 584292,
+    "pozz_CH75": 11591,
+    "heat_mean": 194.85711786435633,
+    "heat_median": 221.14322261752613,
+    "CH_mean": 45.840748399771826
+   },
+   {
+    "model": "single seed42",
+    "reactive_all": 632273,
+    "reactive_any_oxide": 631522,
+    "reactive_has3": 609326,
+    "reactive_no_oxide": 751,
+    "n_no_oxide": 328466,
+    "inert": 14501,
+    "low": 375318,
+    "pozz_CH50": 492363,
+    "hydr_CH50": 139910,
+    "pozz_CH25": 612274,
+    "pozz_CH75": 19312,
+    "heat_mean": 238.08822631835938,
+    "heat_median": 238.90277099609375,
+    "CH_mean": 48.55012130737305
+   }
+  ],
+  "per_seed_reactive_all": [
+   461596,
+   514544,
+   608526,
+   578567,
+   549068,
+   632273,
+   551500,
+   503547,
+   542193,
+   614060,
+   569588
+  ],
+  "n_rows": 1022092,
+  "n_any_oxide": 693626,
+  "n_has3": 651513,
+  "secs": 121.2992639541626
+ },
+ "d5+fe": {
+  "factors": {
+   "d5": true,
+   "fe": true,
+   "mix": false
+  },
+  "amorphous": {
+   "mean": 24.349759488222134,
+   "median": 24.695897277189427,
+   "p10": 16.878478978980173,
+   "p90": 30.13898074829791,
+   "r3_measured_mean": 70.06194564648165,
+   "dataset5_measured_mean": 27.074050632911398
+  },
+  "rows": [
+   {
+    "model": "ensemble",
+    "reactive_all": 64239,
+    "reactive_any_oxide": 64239,
+    "reactive_has3": 61514,
+    "reactive_no_oxide": 0,
+    "n_no_oxide": 328159,
+    "inert": 444104,
+    "low": 513749,
+    "pozz_CH50": 23226,
+    "hydr_CH50": 41013,
+    "pozz_CH25": 58802,
+    "pozz_CH75": 285,
+    "heat_mean": 138.20628843267292,
+    "heat_median": 131.62879603781414,
+    "CH_mean": 24.862590434967952
+   },
+   {
+    "model": "single seed42",
+    "reactive_all": 301611,
+    "reactive_any_oxide": 301611,
+    "reactive_has3": 296358,
+    "reactive_no_oxide": 0,
+    "n_no_oxide": 328159,
+    "inert": 25639,
+    "low": 694842,
+    "pozz_CH50": 66524,
+    "hydr_CH50": 235087,
+    "pozz_CH25": 224741,
+    "pozz_CH75": 554,
+    "heat_mean": 174.72329711914062,
+    "heat_median": 182.27005004882812,
+    "CH_mean": 37.565818786621094
+   }
+  ],
+  "per_seed_reactive_all": [
+   51477,
+   66560,
+   65699,
+   34100,
+   52089,
+   301611,
+   141986,
+   60337,
+   52662,
+   133030,
+   145937
+  ],
+  "n_rows": 1022092,
+  "n_any_oxide": 693933,
+  "n_has3": 651513,
+  "secs": 136.89245080947876
+ },
+ "d5+fe+mix": {
+  "factors": {
+   "d5": true,
+   "fe": true,
+   "mix": true
+  },
+  "amorphous": {
+   "mean": 62.16719025389568,
+   "median": 65.4881936455831,
+   "p10": 50.863100763586075,
+   "p90": 76.61387891264009,
+   "r3_measured_mean": 70.06194564648165,
+   "dataset5_measured_mean": 27.074050632911398
+  },
+  "rows": [
+   {
+    "model": "ensemble",
+    "reactive_all": 567816,
+    "reactive_any_oxide": 567543,
+    "reactive_has3": 556478,
+    "reactive_no_oxide": 273,
+    "n_no_oxide": 328159,
+    "inert": 353148,
+    "low": 101128,
+    "pozz_CH50": 480531,
+    "hydr_CH50": 87285,
+    "pozz_CH25": 566859,
+    "pozz_CH75": 5138,
+    "heat_mean": 190.06075658766187,
+    "heat_median": 215.2245174868157,
+    "CH_mean": 44.981419649790624
+   },
+   {
+    "model": "single seed42",
+    "reactive_all": 627420,
+    "reactive_any_oxide": 627103,
+    "reactive_has3": 597631,
+    "reactive_no_oxide": 317,
+    "n_no_oxide": 328159,
+    "inert": 14919,
+    "low": 379753,
+    "pozz_CH50": 476353,
+    "hydr_CH50": 151067,
+    "pozz_CH25": 607865,
+    "pozz_CH75": 9417,
+    "heat_mean": 232.17938232421875,
+    "heat_median": 236.44131469726562,
+    "CH_mean": 47.5460319519043
+   }
+  ],
+  "per_seed_reactive_all": [
+   463153,
+   492622,
+   594611,
+   565449,
+   511427,
+   627420,
+   557850,
+   509025,
+   517485,
+   603677,
+   555192
+  ],
+  "n_rows": 1022092,
+  "n_any_oxide": 693933,
+  "n_has3": 651513,
+  "secs": 154.64946699142456
+ },
+ "closest_to_paper": [
+  {
+   "variant": "d5+fe",
+   "d5": true,
+   "fe": true,
+   "mix": false,
+   "model": "ensemble",
+   "row_filter": "SiO2+Al2O3+CaO",
+   "reactive": 61514,
+   "paper": 50569,
+   "pct_vs_paper": 21.6
+  },
+  {
+   "variant": "d5+fe",
+   "d5": true,
+   "fe": true,
+   "mix": false,
+   "model": "ensemble",
+   "row_filter": "all rows",
+   "reactive": 64239,
+   "paper": 50569,
+   "pct_vs_paper": 27.0
+  },
+  {
+   "variant": "d5+fe",
+   "d5": true,
+   "fe": true,
+   "mix": false,
+   "model": "ensemble",
+   "row_filter": ">=1 measured oxide",
+   "reactive": 64239,
+   "paper": 50569,
+   "pct_vs_paper": 27.0
+  },
+  {
+   "variant": "d5",
+   "d5": true,
+   "fe": false,
+   "mix": false,
+   "model": "ensemble",
+   "row_filter": "SiO2+Al2O3+CaO",
+   "reactive": 70699,
+   "paper": 50569,
+   "pct_vs_paper": 39.8
+  },
+  {
+   "variant": "d5",
+   "d5": true,
+   "fe": false,
+   "mix": false,
+   "model": "ensemble",
+   "row_filter": ">=1 measured oxide",
+   "reactive": 74575,
+   "paper": 50569,
+   "pct_vs_paper": 47.5
+  }
+ ],
+ "secs": 915.9287502765656
+}

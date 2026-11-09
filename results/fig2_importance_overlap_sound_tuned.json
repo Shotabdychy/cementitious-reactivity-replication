@@ -1,0 +1,35 @@
+{
+ "paper_named_top_descriptors": [
+  "age",
+  "Al2O3",
+  "CaCO3",
+  "Fe2O3",
+  "S gravity",
+  "SiO2",
+  "CaO"
+ ],
+ "overlap_with_my_top10": {
+  "heat release": [
+   "CaCO3",
+   "CaO",
+   "SiO2",
+   "Fe2O3",
+   "S gravity",
+   "Al2O3",
+   "age"
+  ],
+  "CH consumption": [
+   "age",
+   "CaO",
+   "CaCO3",
+   "Al2O3",
+   "S gravity"
+  ],
+  "Bound water": [
+   "SiO2",
+   "CaCO3",
+   "age",
+   "Al2O3"
+  ]
+ }
+}

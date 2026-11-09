@@ -1,0 +1,22 @@
+{
+ "lr": 0.002329762074885538,
+ "dropout": 0.2,
+ "l2": 0.001,
+ "widths": [
+  512,
+  256,
+  32
+ ],
+ "batch": 128,
+ "ch_mult": 10.0,
+ "weighting": "equal",
+ "patience": 70,
+ "cv_score": 0.17236470419501065,
+ "mean_best_epoch": 154.8,
+ "folds": 5,
+ "trials": 18,
+ "max_epochs": 500,
+ "impute": "train",
+ "split_seed": 0,
+ "selected_on": "mean over folds of equal-weight masked validation MSE (standardized); test rows never used"
+}

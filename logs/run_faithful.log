@@ -1,0 +1,89 @@
+=== faithful seed 42 ===
+[faithful seed 42 |   124s] heat release    train R2=+0.915  test R2=+0.781 RMSE=63.32 (n=264)
+[faithful seed 42 |   124s] CH consumption  train R2=+0.880  test R2=+0.128 RMSE=28.86 (n=39)
+[faithful seed 42 |   124s] Bound water     train R2=+0.941  test R2=+0.793 RMSE=2.11 (n=55)
+=== faithful seed 1 ===
+[faithful seed 1 |   105s] heat release    train R2=+0.855  test R2=+0.761 RMSE=66.20 (n=264)
+[faithful seed 1 |   105s] CH consumption  train R2=+0.925  test R2=+0.056 RMSE=30.02 (n=39)
+[faithful seed 1 |   105s] Bound water     train R2=+0.949  test R2=+0.804 RMSE=2.05 (n=55)
+=== faithful seed 2 ===
+[faithful seed 2 |   226s] heat release    train R2=+0.961  test R2=+0.852 RMSE=52.00 (n=264)
+[faithful seed 2 |   226s] CH consumption  train R2=+0.920  test R2=+0.081 RMSE=29.62 (n=39)
+[faithful seed 2 |   226s] Bound water     train R2=+0.973  test R2=+0.898 RMSE=1.48 (n=55)
+=== faithful seed 3 ===
+[faithful seed 3 |    90s] heat release    train R2=+0.689  test R2=+0.584 RMSE=87.31 (n=264)
+[faithful seed 3 |    90s] CH consumption  train R2=+0.802  test R2=+0.074 RMSE=29.74 (n=39)
+[faithful seed 3 |    90s] Bound water     train R2=+0.885  test R2=+0.797 RMSE=2.09 (n=55)
+=== faithful seed 4 ===
+[faithful seed 4 |   141s] heat release    train R2=+0.960  test R2=+0.876 RMSE=47.71 (n=264)
+[faithful seed 4 |   141s] CH consumption  train R2=+0.907  test R2=+0.026 RMSE=30.50 (n=39)
+[faithful seed 4 |   141s] Bound water     train R2=+0.930  test R2=+0.805 RMSE=2.05 (n=55)
+=== faithful seed 5 ===
+[faithful seed 5 |   111s] heat release    train R2=+0.878  test R2=+0.732 RMSE=70.00 (n=264)
+[faithful seed 5 |   111s] CH consumption  train R2=+0.877  test R2=+0.067 RMSE=29.85 (n=39)
+[faithful seed 5 |   111s] Bound water     train R2=+0.864  test R2=+0.844 RMSE=1.83 (n=55)
+=== faithful seed 6 ===
+[faithful seed 6 |    83s] heat release    train R2=+0.846  test R2=+0.760 RMSE=66.23 (n=264)
+[faithful seed 6 |    83s] CH consumption  train R2=+0.886  test R2=-0.078 RMSE=32.08 (n=39)
+[faithful seed 6 |    83s] Bound water     train R2=+0.911  test R2=+0.821 RMSE=1.96 (n=55)
+=== faithful seed 7 ===
+[faithful seed 7 |   101s] heat release    train R2=+0.916  test R2=+0.837 RMSE=54.59 (n=264)
+[faithful seed 7 |   101s] CH consumption  train R2=+0.924  test R2=+0.207 RMSE=27.51 (n=39)
+[faithful seed 7 |   101s] Bound water     train R2=+0.899  test R2=+0.846 RMSE=1.82 (n=55)
+=== faithful seed 8 ===
+[faithful seed 8 |   141s] heat release    train R2=+0.960  test R2=+0.865 RMSE=49.65 (n=264)
+[faithful seed 8 |   141s] CH consumption  train R2=+0.930  test R2=+0.151 RMSE=28.48 (n=39)
+[faithful seed 8 |   141s] Bound water     train R2=+0.929  test R2=+0.803 RMSE=2.06 (n=55)
+=== faithful seed 9 ===
+[faithful seed 9 |   150s] heat release    train R2=+0.953  test R2=+0.876 RMSE=47.61 (n=264)
+[faithful seed 9 |   150s] CH consumption  train R2=+0.912  test R2=-0.120 RMSE=32.71 (n=39)
+[faithful seed 9 |   150s] Bound water     train R2=+0.975  test R2=+0.855 RMSE=1.77 (n=55)
+=== faithful seed 10 ===
+[faithful seed 10 |   106s] heat release    train R2=+0.932  test R2=+0.834 RMSE=55.16 (n=264)
+[faithful seed 10 |   106s] CH consumption  train R2=+0.858  test R2=+0.360 RMSE=24.72 (n=39)
+[faithful seed 10 |   106s] Bound water     train R2=+0.795  test R2=+0.846 RMSE=1.82 (n=55)
+=== clean seed 42 ===
+[clean seed 42 |    82s] heat release    train R2=+0.085  test R2=+0.047 RMSE=132.99 (n=263)
+[clean seed 42 |    82s] CH consumption  train R2=+0.390  test R2=+0.368 RMSE=29.14 (n=38)
+[clean seed 42 |    82s] Bound water     train R2=+0.286  test R2=+0.114 RMSE=4.72 (n=56)
+=== clean seed 1 ===
+[clean seed 1 |    82s] heat release    train R2=+0.702  test R2=+0.525 RMSE=93.93 (n=263)
+[clean seed 1 |    82s] CH consumption  train R2=+0.918  test R2=+0.693 RMSE=20.32 (n=38)
+[clean seed 1 |    82s] Bound water     train R2=+0.932  test R2=+0.681 RMSE=2.83 (n=56)
+=== clean seed 2 ===
+[clean seed 2 |   102s] heat release    train R2=+0.788  test R2=+0.731 RMSE=70.72 (n=263)
+[clean seed 2 |   102s] CH consumption  train R2=+0.908  test R2=+0.670 RMSE=21.06 (n=38)
+[clean seed 2 |   102s] Bound water     train R2=+0.975  test R2=+0.832 RMSE=2.06 (n=56)
+=== clean seed 3 ===
+[clean seed 3 |    89s] heat release    train R2=+0.024  test R2=-0.026 RMSE=138.04 (n=263)
+[clean seed 3 |    89s] CH consumption  train R2=+0.221  test R2=+0.215 RMSE=32.48 (n=38)
+[clean seed 3 |    89s] Bound water     train R2=+0.051  test R2=-0.036 RMSE=5.11 (n=56)
+=== clean seed 4 ===
+[clean seed 4 |    72s] heat release    train R2=+0.728  test R2=+0.611 RMSE=84.97 (n=263)
+[clean seed 4 |    72s] CH consumption  train R2=+0.713  test R2=+0.563 RMSE=24.24 (n=38)
+[clean seed 4 |    72s] Bound water     train R2=+0.893  test R2=+0.601 RMSE=3.17 (n=56)
+=== clean seed 5 ===
+[clean seed 5 |    82s] heat release    train R2=+0.598  test R2=+0.442 RMSE=101.78 (n=263)
+[clean seed 5 |    82s] CH consumption  train R2=+0.811  test R2=+0.553 RMSE=24.49 (n=38)
+[clean seed 5 |    82s] Bound water     train R2=+0.861  test R2=+0.624 RMSE=3.07 (n=56)
+=== clean seed 6 ===
+[clean seed 6 |    80s] heat release    train R2=+0.453  test R2=+0.277 RMSE=115.84 (n=263)
+[clean seed 6 |    80s] CH consumption  train R2=+0.740  test R2=+0.588 RMSE=23.52 (n=38)
+[clean seed 6 |    80s] Bound water     train R2=+0.646  test R2=+0.401 RMSE=3.88 (n=56)
+=== clean seed 7 ===
+[clean seed 7 |   107s] heat release    train R2=+0.920  test R2=+0.813 RMSE=58.96 (n=263)
+[clean seed 7 |   107s] CH consumption  train R2=+0.882  test R2=+0.631 RMSE=22.26 (n=38)
+[clean seed 7 |   107s] Bound water     train R2=+0.962  test R2=+0.769 RMSE=2.41 (n=56)
+=== clean seed 8 ===
+[clean seed 8 |    91s] heat release    train R2=+0.747  test R2=+0.636 RMSE=82.25 (n=263)
+[clean seed 8 |    91s] CH consumption  train R2=+0.939  test R2=+0.731 RMSE=19.01 (n=38)
+[clean seed 8 |    91s] Bound water     train R2=+0.946  test R2=+0.712 RMSE=2.69 (n=56)
+=== clean seed 9 ===
+[clean seed 9 |   125s] heat release    train R2=+0.399  test R2=+0.261 RMSE=117.14 (n=263)
+[clean seed 9 |   125s] CH consumption  train R2=+0.770  test R2=+0.604 RMSE=23.05 (n=38)
+[clean seed 9 |   125s] Bound water     train R2=+0.739  test R2=+0.534 RMSE=3.42 (n=56)
+=== clean seed 10 ===
+[clean seed 10 |   103s] heat release    train R2=+0.438  test R2=+0.400 RMSE=105.57 (n=263)
+[clean seed 10 |   103s] CH consumption  train R2=+0.609  test R2=+0.623 RMSE=22.50 (n=38)
+[clean seed 10 |   103s] Bound water     train R2=+0.729  test R2=+0.471 RMSE=3.65 (n=56)
+ALL FAITHFUL RUNS DONE

@@ -1,0 +1,44 @@
+d2_row,material_name,my_category,my_reasoning
+191,SNM 1,Others,mortar sample; the 21 Dataset-1 categories have no mortar class
+191,SNM 2,Others,mortar sample
+191,SNM 3,Others,mortar sample
+191,SNM 4,Others,mortar sample
+191,SNM 5,Others,mortar sample
+191,SNM 6,Others,mortar sample
+191,SNM 7,Others,mortar sample
+191,SNM 8,Others,mortar sample
+191,SNM 9,Others,mortar sample
+191,SNM 10,Others,mortar sample
+191,SNM 11,Others,mortar sample
+191,SNM 12,Others,mortar sample
+191,SNM 13,Others,mortar sample
+191,SNM 14,Others,mortar sample
+191,SNM 15,Others,mortar sample
+191,SNM 16,Others,mortar sample
+107,PC1,Cements,CEM I ordinary Portland cement
+107,PC2,Cements,CEM I ordinary Portland cement
+107,PC3,Cements,CEM I ordinary Portland cement
+107,PC4,Cements,CEM I ordinary Portland cement
+107,PC5,Cements,CEM I ordinary Portland cement
+107,PC6,Cements,CEM I ordinary Portland cement
+107,PC7,Cements,CEM I ordinary Portland cement
+107,PC8,Cements,CEM I ordinary Portland cement
+107,PC9,Cements,CEM I ordinary Portland cement
+107,SC1,Cements,CEM III blast-furnace slag cement (a blended cement rather than slag as a raw material)
+107,SC2,Cements,CEM III blast-furnace slag cement
+107,SC3,Cements,CEM III blast-furnace slag cement
+107,PL1,Cements,CEM II Portland-limestone cement
+107,PL2,Cements,CEM II Portland-limestone cement
+105,Fresh I,Other byproduct/wastes,cement kiln dust collected fresh from the kiln
+105,Fresh II,Other byproduct/wastes,cement kiln dust
+105,B1-F,Other byproduct/wastes,landfilled cement kiln dust
+105,B2-C,Other byproduct/wastes,landfilled cement kiln dust
+105,B2-F,Other byproduct/wastes,landfilled cement kiln dust
+105,B2-I,Other byproduct/wastes,landfilled cement kiln dust
+105,B3-B,Other byproduct/wastes,landfilled cement kiln dust
+105,B3-D,Other byproduct/wastes,landfilled cement kiln dust
+1,PC,Cements,Portland cement
+1,HL1,Fly ashes,high-lime fly ash
+1,HL2,Fly ashes,high-lime fly ash
+1,LL1,Fly ashes,low-lime fly ash
+1,LL2,Fly ashes,low-lime fly ash

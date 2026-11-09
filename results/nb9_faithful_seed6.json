@@ -1,0 +1,56 @@
+{
+ "variant": "faithful",
+ "seed": 6,
+ "split_random_state": 42,
+ "strat": "stratified (notebook key: bins on unstandardized, digitize on standardized)",
+ "r3_rows": 1849,
+ "n_train": 1479,
+ "n_test": 370,
+ "epochs": 252,
+ "best_epoch": 52,
+ "monitor_at_best": 169.25277709960938,
+ "monitor_epoch1": 1860999.375,
+ "n_nonfinite_epochs": 0,
+ "collapsed": true,
+ "collapse_reason": "monitored nRMSE > 1 (range term degenerate)",
+ "weights": {
+  "Heat_Release_Output": 0.26223776223776224,
+  "CH_Consumption_Output": 4.465034965034965,
+  "Bound_Water_Output": 0.8447552447552448
+ },
+ "train": {
+  "heat release": {
+   "n": 1055,
+   "R2": 0.8456957776702358,
+   "RMSE": 53.22962221259575
+  },
+  "CH consumption": {
+   "n": 153,
+   "R2": 0.8862531487577342,
+   "RMSE": 13.208446293599621
+  },
+  "Bound water": {
+   "n": 222,
+   "R2": 0.9105995324592052,
+   "RMSE": 1.5633160939541064
+  }
+ },
+ "test": {
+  "heat release": {
+   "n": 264,
+   "R2": 0.7603583462055654,
+   "RMSE": 66.22576513512033
+  },
+  "CH consumption": {
+   "n": 39,
+   "R2": -0.07770265001748045,
+   "RMSE": 32.08038518776389
+  },
+  "Bound water": {
+   "n": 55,
+   "R2": 0.8207208662682636,
+   "RMSE": 1.9643985670643098
+  }
+ },
+ "secs": 82.98072648048401
+}

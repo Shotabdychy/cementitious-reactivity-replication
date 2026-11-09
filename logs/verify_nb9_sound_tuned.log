@@ -1,0 +1,30 @@
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+[sound_tuned |      0s] configuration: tuned, from <project>\Assignment-2\results\nb9_tuned_config.json (cv_score 0.17236470419501065)
+[sound_tuned |      0s] CFG = {'lr': 0.002329762074885538, 'dropout': 0.2, 'l2': 0.001, 'widths': [512, 256, 32], 'batch': 128, 'ch_mult': 10.0, 'weighting': 'equal', 'patience': 70}
+[sound_tuned |      0s] outer split: row-level, stratified by target-availability x heat tertile (split_seed 0); train 1479 test 370
+[sound_tuned |      0s] labelled rows  train {'heat release': 1055, 'CH consumption': 154, 'Bound water': 221}  test {'heat release': 264, 'CH consumption': 38, 'Bound water': 56}
+[sound_tuned |      1s] feature imputation: train-rows; scaler and target standardization fitted on the 1479 training rows only
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\engine\base_layer_utils.py:384: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+[sound_tuned |     29s] seed  42: epochs  207 best  137 val_crit 0.17444 | test R2 heat +0.937 CH +0.755 BW +0.827
+[sound_tuned |     53s] seed   1: epochs  187 best  117 val_crit 0.18140 | test R2 heat +0.908 CH +0.733 BW +0.769
+[sound_tuned |     75s] seed   2: epochs  174 best  104 val_crit 0.10953 | test R2 heat +0.926 CH +0.750 BW +0.726
+[sound_tuned |     99s] seed   3: epochs  165 best   95 val_crit 0.11031 | test R2 heat +0.942 CH +0.754 BW +0.713
+[sound_tuned |    118s] seed   4: epochs  146 best   76 val_crit 0.13704 | test R2 heat +0.919 CH +0.773 BW +0.842
+[sound_tuned |    165s] seed   5: epochs  387 best  317 val_crit 0.16574 | test R2 heat +0.939 CH +0.655 BW +0.758
+[sound_tuned |    208s] seed   6: epochs  349 best  279 val_crit 0.09154 | test R2 heat +0.952 CH +0.722 BW +0.837
+[sound_tuned |    222s] seed   7: epochs  169 best   99 val_crit 0.11195 | test R2 heat +0.924 CH +0.720 BW +0.735
+[sound_tuned |    243s] seed   8: epochs  257 best  187 val_crit 0.17030 | test R2 heat +0.915 CH +0.696 BW +0.830
+[sound_tuned |    260s] seed   9: epochs  186 best  116 val_crit 0.15465 | test R2 heat +0.916 CH +0.728 BW +0.742
+[sound_tuned |    271s] seed  10: epochs  120 best   50 val_crit 0.33153 | test R2 heat +0.904 CH +0.647 BW +0.853
+[sound_tuned |    271s] per-seed test R2 mean +- SD: heat +0.926 +- 0.015 (min +0.904, max +0.952) | CH +0.721 +- 0.041 (min +0.647, max +0.773) | BW +0.785 +- 0.053 (min +0.713, max +0.853)
+[sound_tuned |    277s] ENSEMBLE of 11 seeds, test: heat R2 +0.947 [+0.933,+0.960] RMSE 32.02 | CH R2 +0.764 [+0.396,+0.905] RMSE 15.16 | BW R2 +0.830 [+0.669,+0.910] RMSE 1.77
+[sound_tuned |    277s] ENSEMBLE of 11 seeds, train: heat R2 +0.967 RMSE 24.47 | CH R2 +0.982 RMSE 5.18 | BW R2 +0.984 RMSE 0.68
+[sound_tuned |    277s] paper (test): heat R2 0.93 RMSE 28.2 | CH R2 0.85 RMSE 12.17 | BW R2 0.89 RMSE 1.47
+[sound_tuned |    277s] wrote results/nb9_sound_tuned.json, results/nb9_sound_tuned_predictions.csv, models/sound_tuned/
+[sound_tuned |    277s] done

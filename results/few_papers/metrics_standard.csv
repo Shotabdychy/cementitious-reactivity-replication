@@ -1,0 +1,5 @@
+mat_precision,mat_recall,mat_f1,n_true_materials,n_pred_materials,n_paired,n_paired_strict,cell_precision,cell_recall,cell_f1,cells_both_present,cells_missed,cells_invented,cells_exact,cells_within_0p1,cell_rmse,cell_max_abs_diff,d2_row,group,doi
+1.0,1.0,1.0,16,16,16,0,1.0,1.0,1.0,112,0,0,111,111,0.028347335475692046,0.30000000000000004,191,main,10.1016/j.conbuildmat.2014.07.051
+1.0,1.0,1.0,14,14,14,0,1.0,1.0,1.0,84,0,0,84,84,0.0,0.0,107,main,10.1016/s0958-9465(03)00118-5
+0.0,0.0,0.0,1,8,0,0,0.0,0.0,0.0,0,0,0,0,0,0.0,0.0,105,main,10.1016/j.enggeo.2005.09.036
+1.0,1.0,1.0,5,5,5,5,1.0,1.0,1.0,45,0,0,45,45,0.0,0.0,1,main,10.1016/s0008-8846(99)00160-x

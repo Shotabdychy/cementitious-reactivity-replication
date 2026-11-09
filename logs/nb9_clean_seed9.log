@@ -1,0 +1,19 @@
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+[clean seed 9 |     0s] R3 rows 1849  labels {'heat release': 1319, 'CH consumption': 192, 'Bound water': 277}
+[clean seed 9 |     0s] stratified (same scale for bins and digitize); train 1479 test 370
+[clean seed 9 |     0s] test labels {'heat release': 263, 'CH consumption': 38, 'Bound water': 56}
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+[clean seed 9 |     1s] loss weights {'Heat_Release_Output': 0.2621, 'CH_Consumption_Output': 4.4619, 'Bound_Water_Output': 0.8456}
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\engine\base_layer_utils.py:384: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+[clean seed 9 |   122s] stopped after 212 epochs; monitored value at epoch 1 = 0.905744; restored epoch 12; monitored value there 0.524975; non-finite epochs 0/212
+[clean seed 9 |   125s] heat release    train R2=+0.399  test R2=+0.261 RMSE=117.14 (n=263)
+[clean seed 9 |   125s] CH consumption  train R2=+0.770  test R2=+0.604 RMSE=23.05 (n=38)
+[clean seed 9 |   125s] Bound water     train R2=+0.739  test R2=+0.534 RMSE=3.42 (n=56)
+[clean seed 9 |   125s] done

@@ -1,0 +1,11 @@
+{
+ "n": 40,
+ "n_agree": 36,
+ "accuracy": 0.9,
+ "sample_seed": 1,
+ "label_space": "top-level segment of the Dataset 3 Category string",
+ "n_distinct_full_labels": 178,
+ "n_distinct_top_level": 65,
+ "paper_claim": 0.97,
+ "note": "Dataset 3 Category is hierarchical free text (178 distinct full labels, 65 distinct top-level strings in 318 rows), not the 19 predefined types described in the Supplementary Information, and not the 21 flat names of the Dataset 1 Category column."
+}

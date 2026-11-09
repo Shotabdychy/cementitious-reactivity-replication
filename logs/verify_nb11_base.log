@@ -1,0 +1,58 @@
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+[sound_tuned |      0s] variants to run: ['base']
+[sound_tuned |     16s] merged Gard table: 1022092 samples, 41 columns (cached)
+[sound_tuned |     16s] first rows: [{'sample_id': 1, 'rock_name': 'dacite', 'data_source': 'ozchem'}, {'sample_id': 2, 'rock_name': 'phonolite', 'data_source': 'ozchem'}]
+[sound_tuned |     16s] last rows:  [{'sample_id': 1022091, 'rock_name': 'charnockite', 'author': 'Mikhalsky, E. V.; Sheraton, J. W. & Hahne, K.', 'year': '2006'}, {'sample_id': 1022092, 'rock_name': 'charnockite', 'author': 'Mikhalsky, E. V.; Sheraton, J. W. & Hahne, K.', 'year': '2006'}]
+[sound_tuned |     16s] 11 ensemble members; single-model row uses seed42.keras
+[sound_tuned |     17s] Dataset 5: 162 rows, 158 with a measured amorphous content, mean 27.1%
+[sound_tuned |     17s] R3 rows appended to the imputation pool: 1849; measured amorphous content mean 70.1%
+[sound_tuned |     17s] 
+################ variant 'base'  {'d5': False, 'fe': False, 'mix': False}
+[sound_tuned |     17s]   feature <- source: SiO2<-sio2, Al2O3<-al2o3, Fe2O3<-fe2o3, CaO<-cao, MgO<-mgo, SO3<-so3, TiO2<-tio2, MnO<-mno, K2O<-k2o, Na2O<-na2o, LOI<-loi, S gravity<-density_model/1000, Amorphous content<-None
+[sound_tuned |     17s]   rows with no measured oxide: 328466; with >=1: 693626; with SiO2+Al2O3+CaO: 651513; mean oxides present 5.74
+[sound_tuned |     17s]   imputing 1023941 rows
+[sound_tuned |     81s]   imputed rock amorphous content: mean 56.4% median 58.8% (R3 measured 70.1%, Dataset-5 measured 27.1%)
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+[sound_tuned |    123s]   ensemble       reactive >200 J/g: all 141,548 | >=1 oxide 141,548 | SiO2+Al2O3+CaO 129,355 | no oxide       0/328,466  (paper 50,569)
+[sound_tuned |    123s]   single seed42  reactive >200 J/g: all 290,959 | >=1 oxide 290,959 | SiO2+Al2O3+CaO 269,893 | no oxide       0/328,466  (paper 50,569)
+[sound_tuned |    123s]   Part 2.5 pozzolanic/hydraulic split of the reactive rocks (my rule, not in the released code); paper ~46,700 / ~3,800:
+[sound_tuned |    123s]     CH >   0 g/100 g -> 141,253 pozzolanic /     295 hydraulic
+[sound_tuned |    123s]     CH >  10 g/100 g -> 140,258 pozzolanic /   1,290 hydraulic
+[sound_tuned |    123s]     CH >  25 g/100 g -> 133,358 pozzolanic /   8,190 hydraulic
+[sound_tuned |    123s]     CH >  50 g/100 g ->  72,263 pozzolanic /  69,285 hydraulic
+[sound_tuned |    123s]     CH >  75 g/100 g ->     789 pozzolanic / 140,759 hydraulic
+[sound_tuned |    123s]     CH > 100 g/100 g ->     528 pozzolanic / 141,020 hydraulic
+[sound_tuned |    124s]   rock names: 11355 raw; 1163 with n>=20; of those 804 have more than 5% reactive (paper: 25-38 types, grouping undocumented)
+[sound_tuned |    124s]   types named in the paper, raw database names:
+                  n  n_reactive  ratio  n_any_oxide
+rock_name                                          
+anorthosite     877         451  0.514          550
+ignimbrite      824         279  0.339          770
+porphyry       1088         390  0.358         1018
+rhyolite      36678       10696  0.292        29334
+andesite      44998        8716  0.194        38063
+dacite        20711        5696  0.275        18293
+tuff           5999         770  0.128         2912
+basalt       171708       21236  0.124       139268
+granite       32691        5191  0.159        24795
+shale          1674         412  0.246         1438
+[sound_tuned |    124s] 
+==================== ablation table (reactive = heat release > 200 J/g) ====================
+[sound_tuned |    124s] variant    d5    fe   mix         model         row_filter  reactive  paper  pct_vs_paper
+   base False False False      ensemble           all rows    141548  50569         179.9
+   base False False False      ensemble >=1 measured oxide    141548  50569         179.9
+   base False False False      ensemble     SiO2+Al2O3+CaO    129355  50569         155.8
+   base False False False single seed42           all rows    290959  50569         475.4
+   base False False False single seed42 >=1 measured oxide    290959  50569         475.4
+   base False False False single seed42     SiO2+Al2O3+CaO    269893  50569         433.7
+[sound_tuned |    124s] 
+closest five combinations to the paper's 50,569:
+[sound_tuned |    124s] variant    d5    fe   mix         model         row_filter  reactive  paper  pct_vs_paper
+   base False False False      ensemble     SiO2+Al2O3+CaO    129355  50569         155.8
+   base False False False      ensemble           all rows    141548  50569         179.9
+   base False False False      ensemble >=1 measured oxide    141548  50569         179.9
+   base False False False single seed42     SiO2+Al2O3+CaO    269893  50569         433.7
+   base False False False single seed42           all rows    290959  50569         475.4
+[sound_tuned |    124s] done

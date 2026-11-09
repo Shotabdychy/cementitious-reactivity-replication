@@ -1,0 +1,80 @@
+{
+ "n_categories_in_dataset1": 21,
+ "categories": [
+  "Biomass ashes",
+  "Bottom ashes",
+  "C&D wastes",
+  "Calcined clays",
+  "Cements",
+  "Clays",
+  "Clinkers",
+  "Fly ashes",
+  "Glasses",
+  "Granite",
+  "Lime species",
+  "Metakaolin",
+  "Mine tailings",
+  "Natural pozzolans",
+  "Other ashes",
+  "Other byproduct/minerals",
+  "Other byproduct/wastes",
+  "Other minerals",
+  "Others",
+  "Silica fume",
+  "Slags"
+ ],
+ "n_paired": 25,
+ "n_agree": 15,
+ "agreement": 0.6,
+ "per_table": [
+  {
+   "d2_row": 191,
+   "doi": "10.1016/j.conbuildmat.2014.07.051",
+   "dataset1_categories": [
+    "Others"
+   ],
+   "my_categories": [
+    "Others"
+   ],
+   "same_set": true
+  },
+  {
+   "d2_row": 107,
+   "doi": "10.1016/s0958-9465(03)00118-5",
+   "dataset1_categories": [
+    "Cements"
+   ],
+   "my_categories": [
+    "Cements"
+   ],
+   "same_set": true
+  },
+  {
+   "d2_row": 105,
+   "doi": "10.1016/j.enggeo.2005.09.036",
+   "dataset1_categories": [
+    "Cements"
+   ],
+   "my_categories": [
+    "Other byproduct/wastes"
+   ],
+   "same_set": false
+  },
+  {
+   "d2_row": 1,
+   "doi": "10.1016/s0008-8846(99)00160-x",
+   "dataset1_categories": [
+    "Cements",
+    "Fly ashes",
+    "Others"
+   ],
+   "my_categories": [
+    "Cements",
+    "Fly ashes"
+   ],
+   "same_set": false
+  }
+ ],
+ "paper_classification_accuracy": 0.97,
+ "note": "The Supplementary Information states 19 predefined material types; the Category column of Dataset 1 contains 21 distinct names."
+}

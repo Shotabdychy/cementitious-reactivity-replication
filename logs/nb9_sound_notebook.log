@@ -1,0 +1,30 @@
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+[sound_notebook |      0s] configuration: the released notebook-9 network (256-256-16, dropout 0.1, Adam 1e-3, batch 50, notebook loss weights with the Ca(OH)2 head x5, patience 200)
+[sound_notebook |      0s] CFG = {'lr': 0.001, 'dropout': 0.1, 'l2': 0.0, 'widths': [256, 256, 16], 'batch': 50, 'ch_mult': 5.0, 'weighting': 'notebook', 'patience': 200}
+[sound_notebook |      0s] outer split: row-level, stratified by target-availability x heat tertile (split_seed 0); train 1479 test 370
+[sound_notebook |      0s] labelled rows  train {'heat release': 1055, 'CH consumption': 154, 'Bound water': 221}  test {'heat release': 264, 'CH consumption': 38, 'Bound water': 56}
+[sound_notebook |      1s] feature imputation: train-rows; scaler and target standardization fitted on the 1479 training rows only
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\engine\base_layer_utils.py:384: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+[sound_notebook |     83s] seed  42: epochs  418 best  218 val_crit 0.17580 | test R2 heat +0.926 CH +0.711 BW +0.830
+[sound_notebook |    163s] seed   1: epochs  392 best  192 val_crit 0.24188 | test R2 heat +0.877 CH +0.812 BW +0.772
+[sound_notebook |    321s] seed   2: epochs  757 best  557 val_crit 0.08707 | test R2 heat +0.943 CH +0.736 BW +0.817
+[sound_notebook |    403s] seed   3: epochs  426 best  226 val_crit 0.09373 | test R2 heat +0.945 CH +0.724 BW +0.873
+[sound_notebook |    583s] seed   4: epochs  762 best  562 val_crit 0.11549 | test R2 heat +0.947 CH +0.757 BW +0.860
+[sound_notebook |    729s] seed   5: epochs  412 best  212 val_crit 0.22155 | test R2 heat +0.924 CH +0.683 BW +0.792
+[sound_notebook |    909s] seed   6: epochs  647 best  447 val_crit 0.10052 | test R2 heat +0.938 CH +0.726 BW +0.764
+[sound_notebook |   1078s] seed   7: epochs  672 best  472 val_crit 0.12109 | test R2 heat +0.937 CH +0.721 BW +0.806
+[sound_notebook |   1193s] seed   8: epochs  433 best  233 val_crit 0.26489 | test R2 heat +0.868 CH +0.736 BW +0.697
+[sound_notebook |   1347s] seed   9: epochs  579 best  379 val_crit 0.13171 | test R2 heat +0.949 CH +0.766 BW +0.792
+[sound_notebook |   1440s] seed  10: epochs  385 best  185 val_crit 0.29102 | test R2 heat +0.940 CH +0.698 BW +0.760
+[sound_notebook |   1440s] per-seed test R2 mean +- SD: heat +0.927 +- 0.028 (min +0.868, max +0.949) | CH +0.734 +- 0.035 (min +0.683, max +0.812) | BW +0.797 +- 0.049 (min +0.697, max +0.873)
+[sound_notebook |   1458s] ENSEMBLE of 11 seeds, test: heat R2 +0.956 [+0.943,+0.968] RMSE 29.14 | CH R2 +0.776 [+0.434,+0.907] RMSE 14.78 | BW R2 +0.844 [+0.696,+0.928] RMSE 1.70
+[sound_notebook |   1458s] ENSEMBLE of 11 seeds, train: heat R2 +0.980 RMSE 18.84 | CH R2 +0.985 RMSE 4.81 | BW R2 +0.990 RMSE 0.52
+[sound_notebook |   1458s] paper (test): heat R2 0.93 RMSE 28.2 | CH R2 0.85 RMSE 12.17 | BW R2 0.89 RMSE 1.47
+[sound_notebook |   1461s] wrote results/nb9_sound_notebook.json, results/nb9_sound_notebook_predictions.csv, models/sound_notebook/
+[sound_notebook |   1461s] done

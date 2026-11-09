@@ -1,0 +1,59 @@
+{
+ "variant": "clean",
+ "seed": 3,
+ "split_random_state": 42,
+ "strat": "stratified (same scale for bins and digitize)",
+ "r3_rows": 1849,
+ "n_train": 1479,
+ "n_test": 370,
+ "epochs": 200,
+ "best_epoch": 1,
+ "monitor_at_best": NaN,
+ "monitor_epoch1": NaN,
+ "n_nonfinite_epochs": 200,
+ "collapsed": true,
+ "collapse_reason": "monitor non-finite",
+ "weights": {
+  "Heat_Release_Output": 0.2620545073375262,
+  "CH_Consumption_Output": 4.461914744933613,
+  "Bound_Water_Output": 0.8455625436757512
+ },
+ "train": {
+  "heat release": {
+   "n": 1056,
+   "R2": 0.023589455764409517,
+   "RMSE": 133.82462500039804
+  },
+  "CH consumption": {
+   "n": 154,
+   "R2": 0.2208569219663411,
+   "RMSE": 33.5019228935598
+  },
+  "Bound water": {
+   "n": 221,
+   "R2": 0.05097488855009058,
+   "RMSE": 5.008911728407866
+  }
+ },
+ "test": {
+  "heat release": {
+   "n": 263,
+   "R2": -0.02622935861327158,
+   "RMSE": 138.03958848055782
+  },
+  "CH consumption": {
+   "n": 38,
+   "R2": 0.21450397437204516,
+   "RMSE": 32.48074456316035
+  },
+  "Bound water": {
+   "n": 56,
+   "R2": -0.03618155375240106,
+   "RMSE": 5.1057351579568815
+  }
+ },
+ "secs": 89.06069374084473,
+ "python": "3.11.9",
+ "tensorflow": "2.15.1",
+ "pandas": "3.0.6"
+}

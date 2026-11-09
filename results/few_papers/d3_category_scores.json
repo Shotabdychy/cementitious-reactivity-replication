@@ -1,0 +1,9 @@
+{
+ "n": 40,
+ "n_agree": 3,
+ "accuracy": 0.075,
+ "sample_seed": 0,
+ "sample_of": 318,
+ "paper_claim": 0.97,
+ "note": "Dataset 3 is the notebook-8 fine-tuning set; the paper does not state a held-out split for the 97% figure."
+}

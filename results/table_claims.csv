@@ -1,0 +1,16 @@
+claim,paper,reproduced,detail,status,reason
+test R2 for heat release,0.93,0.947,"ensemble of 11 seeds, 95% CI [0.933, 0.960], n=264",reproduced,
+test RMSE for heat release,28.2,32.02,"95% CI [25.32, 38.59]",reproduced,
+test R2 for CH consumption,0.85,0.764,"ensemble of 11 seeds, 95% CI [0.396, 0.905], n=38",partially reproduced,the 95% interval covers the paper's value; only 38 labelled test rows
+test RMSE for CH consumption,12.17,15.16,"95% CI [10.35, 19.92]",partially reproduced,
+test R2 for Bound water,0.89,0.83,"ensemble of 11 seeds, 95% CI [0.669, 0.910], n=56",partially reproduced,the 95% interval covers the paper's value; only 56 labelled test rows
+test RMSE for Bound water,1.47,1.77,"95% CI [1.24, 2.24]",partially reproduced,
+heat release: R2 when no material is shared between train and test,,0.645,random-split ensemble 0.947 -> grouped 0.645 (drop 0.301),not testable,the paper does not state how its split was formed; reported because the stated purpose is screening materials the model has not seen
+CH consumption: R2 when no material is shared between train and test,,-0.061,random-split ensemble 0.764 -> grouped -0.061 (drop 0.825),not testable,the paper does not state how its split was formed; reported because the stated purpose is screening materials the model has not seen
+Bound water: R2 when no material is shared between train and test,,0.548,random-split ensemble 0.830 -> grouped 0.548 (drop 0.282),not testable,the paper does not state how its split was formed; reported because the stated purpose is screening materials the model has not seen
+materials with heat release > 380 J/g and bound water > 10,964.0,4918,per-seed range 2031-6749,not reproduced,"depends on the authors' trained weights, which are not released"
+natural rock samples predicted reactive (> 200 J/g),50569.0,141548,"notebook as released, all 1,022,092 rows; closest ablation combination 61,514 (d5+fe, SiO2+Al2O3+CaO)",not reproduced,"the row filter, the rock-name grouping and the pozzolanic/hydraulic rule are not in the released code"
+"table-extraction relevance detection (Table G3, F1)",0.95,1.0,"6 tables, notebook-5 metric",reproduced with a substitute model,substitute extractor (Claude Opus 5); the authors' fine-tuned endpoint is private
+oxide values extracted from the table text,,240/241,cells agreeing exactly with the Dataset 2 manual ground truth (3 of the 4 composition tables; row 105's ground truth belongs to another table),reproduced with a substitute model,substitute extractor (Claude Opus 5); the authors' fine-tuned endpoint is private
+agreement with the Dataset 1 rows for the same tables,,192/193,25 materials paired out of 43 extracted,reproduced with a substitute model,substitute extractor (Claude Opus 5); the authors' fine-tuned endpoint is private
+material-type classification accuracy,0.97,0.9,"36/40 unseen Dataset 3 rows, top-level type",partially reproduced,"substitute classifier, and Dataset 3 labels are hierarchical free text (178 distinct labels, 65 distinct top-level strings), not the 19 predefined types the Supplementary Information describes"

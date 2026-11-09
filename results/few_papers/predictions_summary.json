@@ -1,0 +1,9 @@
+{
+ "n_extracted": 43,
+ "n_paired": 25,
+ "heat_mae": 21.398081595742187,
+ "heat_max_abs": 49.46916872558592,
+ "CH_mae": 6.525842996064452,
+ "BW_mae": 1.164745540962158,
+ "n_same_reactivity_class": 24
+}

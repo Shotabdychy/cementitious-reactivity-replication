@@ -1,0 +1,5 @@
+d2_row,doi,n_dataset1,n_mine,n_shared,n_shared_strict,only_in_dataset1,only_in_mine,cells_both_present,cells_exact,cells_within_0p1,cells_in_d1_not_mine,cells_in_mine_not_d1
+191,10.1016/j.conbuildmat.2014.07.051,13,16,13,13,[],"['snm14', 'snm15', 'snm16']",86,85,85,0,5
+107,10.1016/s0958-9465(03)00118-5,12,14,0,0,"['cemi325r', 'cemi425r', 'cemi525r', 'cemiii325a', 'cemiii325b']","['pc1', 'pc2', 'pc3', 'pc4', 'pc5', 'pc6', 'pc7', 'pc8', 'pc9', 'pl1', 'pl2', 'sc1', 'sc2', 'sc3']",0,0,0,0,0
+105,10.1016/j.enggeo.2005.09.036,9,8,7,7,"['mean', 'nan']",['b3b'],62,62,62,0,0
+1,10.1016/s0008-8846(99)00160-x,5,5,5,5,[],[],45,45,45,0,0

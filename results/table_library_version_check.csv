@@ -1,0 +1,2 @@
+seed,env_legacy,env_main,heat_R2_legacy,heat_R2_main,CH_R2_legacy,CH_R2_main,BW_R2_legacy,BW_R2_main,best_epoch_legacy,best_epoch_main,collapsed_legacy,collapsed_main
+42,py 3.11.9 / tf 2.12.0 / pandas 1.5.3,py 3.11.9 / tf 2.15.1 / pandas 3.0.6,0.8712,0.7809,0.1273,0.1276,0.8057,0.7926,447,115,True,True

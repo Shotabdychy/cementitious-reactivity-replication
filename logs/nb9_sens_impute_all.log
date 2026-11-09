@@ -1,0 +1,22 @@
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+[sens_impute_all |      0s] configuration: tuned, from <project>\Assignment-2\results\nb9_tuned_config.json (cv_score 0.17236470419501065)
+[sens_impute_all |      0s] CFG = {'lr': 0.002329762074885538, 'dropout': 0.2, 'l2': 0.001, 'widths': [512, 256, 32], 'batch': 128, 'ch_mult': 10.0, 'weighting': 'equal', 'patience': 70}
+[sens_impute_all |      1s] outer split: row-level, stratified by target-availability x heat tertile (split_seed 0); train 1479 test 370
+[sens_impute_all |      1s] labelled rows  train {'heat release': 1055, 'CH consumption': 154, 'Bound water': 221}  test {'heat release': 264, 'CH consumption': 38, 'Bound water': 56}
+[sens_impute_all |      1s] feature imputation: all-rows; scaler and target standardization fitted on the 1479 training rows only
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\engine\base_layer_utils.py:384: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+[sens_impute_all |     24s] seed  42: epochs  124 best   54 val_crit 0.18357 | test R2 heat +0.935 CH +0.777 BW +0.774
+[sens_impute_all |     56s] seed   1: epochs  176 best  106 val_crit 0.20269 | test R2 heat +0.939 CH +0.732 BW +0.767
+[sens_impute_all |     91s] seed   2: epochs  223 best  153 val_crit 0.09421 | test R2 heat +0.931 CH +0.732 BW +0.790
+[sens_impute_all |     92s] per-seed test R2 mean +- SD: heat +0.935 +- 0.004 (min +0.931, max +0.939) | CH +0.747 +- 0.026 (min +0.732, max +0.777) | BW +0.777 +- 0.012 (min +0.767, max +0.790)
+[sens_impute_all |    104s] ENSEMBLE of 3 seeds, test: heat R2 +0.948 [+0.931,+0.962] RMSE 31.63 | CH R2 +0.780 [+0.471,+0.897] RMSE 14.66 | BW R2 +0.801 [+0.585,+0.903] RMSE 1.92
+[sens_impute_all |    104s] ENSEMBLE of 3 seeds, train: heat R2 +0.960 RMSE 27.00 | CH R2 +0.961 RMSE 7.75 | BW R2 +0.973 RMSE 0.87
+[sens_impute_all |    104s] paper (test): heat R2 0.93 RMSE 28.2 | CH R2 0.85 RMSE 12.17 | BW R2 0.89 RMSE 1.47
+[sens_impute_all |    104s] wrote results/nb9_sens_impute_all.json, results/nb9_sens_impute_all_predictions.csv, models/sens_impute_all/
+[sens_impute_all |    104s] done

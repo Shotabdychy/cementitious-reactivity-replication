@@ -1,0 +1,163 @@
+{
+ "tag": "sound_tuned",
+ "n_materials": 14429,
+ "n_models": 11,
+ "heat_max_in_dataset4": 1030.0,
+ "check1": {
+  "ensemble": 4918,
+  "per_seed": [
+   6557,
+   2492,
+   3995,
+   6023,
+   2031,
+   3874,
+   4848,
+   4716,
+   4799,
+   6749,
+   6435
+  ],
+  "authors": 964
+ },
+ "authors_rows": [
+  {
+   "index": 3,
+   "name": "HAC",
+   "name_matches": true,
+   "heat_mine": 1004.08349609375,
+   "heat_authors": 527.6,
+   "CH_mine": 95.51383209228516,
+   "CH_authors": 77.8,
+   "BW_mine": 45.47711944580078,
+   "BW_authors": 39.4
+  },
+  {
+   "index": 38,
+   "name": "MK",
+   "name_matches": true,
+   "heat_mine": 502.6229248046875,
+   "heat_authors": 418.6,
+   "CH_mine": 90.44061279296875,
+   "CH_authors": 101.1,
+   "BW_mine": 27.086774826049805,
+   "BW_authors": 26.5
+  },
+  {
+   "index": 50,
+   "name": "Residuals",
+   "name_matches": true,
+   "heat_mine": 510.7676086425781,
+   "heat_authors": 513.6,
+   "CH_mine": 85.76539611816406,
+   "CH_authors": 123.8,
+   "BW_mine": 23.87022590637207,
+   "BW_authors": 23.5
+  },
+  {
+   "index": 55,
+   "name": "Slag",
+   "name_matches": true,
+   "heat_mine": 422.13360595703125,
+   "heat_authors": 392.3,
+   "CH_mine": 49.20097732543945,
+   "CH_authors": 42.3,
+   "BW_mine": 20.7221622467041,
+   "BW_authors": 14.0
+  },
+  {
+   "index": 80,
+   "name": "Granulated BFS",
+   "name_matches": true,
+   "heat_mine": 404.38751220703125,
+   "heat_authors": 399.7,
+   "CH_mine": 51.09880828857422,
+   "CH_authors": 40.3,
+   "BW_mine": 19.64153289794922,
+   "BW_authors": 14.0
+  },
+  {
+   "index": 14393,
+   "name": "MK [%]",
+   "name_matches": true,
+   "heat_mine": 538.5234375,
+   "heat_authors": 470.3,
+   "CH_mine": 99.61129760742188,
+   "CH_authors": 109.6,
+   "BW_mine": 28.915996551513672,
+   "BW_authors": 28.9
+  },
+  {
+   "index": 14409,
+   "name": "Al-ULCC",
+   "name_matches": true,
+   "heat_mine": 1199.60693359375,
+   "heat_authors": 867.3,
+   "CH_mine": 133.74591064453125,
+   "CH_authors": 136.8,
+   "BW_mine": 46.099605560302734,
+   "BW_authors": 46.1
+  },
+  {
+   "index": 14417,
+   "name": "T75",
+   "name_matches": true,
+   "heat_mine": 587.2491455078125,
+   "heat_authors": 410.3,
+   "CH_mine": 24.391185760498047,
+   "CH_authors": 18.3,
+   "BW_mine": 19.97430419921875,
+   "BW_authors": 27.4
+  },
+  {
+   "index": 14420,
+   "name": "T25",
+   "name_matches": true,
+   "heat_mine": 483.1370544433594,
+   "heat_authors": 381.8,
+   "CH_mine": 20.453048706054688,
+   "CH_authors": 21.7,
+   "BW_mine": 14.113973617553711,
+   "BW_authors": 24.1
+  },
+  {
+   "index": 14421,
+   "name": "Alumina A1000-SG",
+   "name_matches": true,
+   "heat_mine": 1107.892333984375,
+   "heat_authors": 780.6,
+   "CH_mine": 144.828369140625,
+   "CH_authors": 187.0,
+   "BW_mine": 49.431453704833984,
+   "BW_authors": 50.0
+  }
+ ],
+ "qualitative_claims": {
+  "metakaolin among the most reactive": {
+   "rank_by_heat": 1,
+   "n_categories": 21,
+   "heat_median": 545.8115234375,
+   "CH_median": 103.3430404663086
+  },
+  "fly ashes pozzolanic (high Ca(OH)2 consumption)": {
+   "CH_median": 69.61310577392578,
+   "pct_above_50": 87.22879684418146
+  },
+  "slags hydraulic (low Ca(OH)2 consumption, high heat)": {
+   "CH_median": 47.14680480957031,
+   "heat_median": 359.339599609375,
+   "pct_above_50": 43.23922734026746
+  },
+  "lime species inert": {
+   "heat_median": 85.90032958984375,
+   "CH_median": 10.355073928833008,
+   "pct_reactive": 36.95652173913043
+  }
+ },
+ "out_of_range": {
+  "n_above_dataset4_max": 49,
+  "n_negative_heat": 126,
+  "n_total": 14429
+ },
+ "secs": 10.830358266830444
+}

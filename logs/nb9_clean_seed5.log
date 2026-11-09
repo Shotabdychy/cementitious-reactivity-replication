@@ -1,0 +1,20 @@
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+[clean seed 5 |     0s] R3 rows 1849  labels {'heat release': 1319, 'CH consumption': 192, 'Bound water': 277}
+[clean seed 5 |     0s] stratified (same scale for bins and digitize); train 1479 test 370
+[clean seed 5 |     0s] test labels {'heat release': 263, 'CH consumption': 38, 'Bound water': 56}
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+[clean seed 5 |     1s] loss weights {'Heat_Release_Output': 0.2621, 'CH_Consumption_Output': 4.4619, 'Bound_Water_Output': 0.8456}
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\engine\base_layer_utils.py:384: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+WARNING:tensorflow:From <project>\Code\venv\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+[clean seed 5 |    81s] stopped after 224 epochs; monitored value at epoch 1 = 1.42887e+06; restored epoch 24; monitored value there 438797; non-finite epochs 0/224
+[clean seed 5 |    81s] COLLAPSED early stopping: monitored nRMSE > 1 (range term degenerate)
+[clean seed 5 |    82s] heat release    train R2=+0.598  test R2=+0.442 RMSE=101.78 (n=263)
+[clean seed 5 |    82s] CH consumption  train R2=+0.811  test R2=+0.553 RMSE=24.49 (n=38)
+[clean seed 5 |    82s] Bound water     train R2=+0.861  test R2=+0.624 RMSE=3.07 (n=56)
+[clean seed 5 |    82s] done
