@@ -16,8 +16,6 @@ import pandas as pd
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import TARGETS, SHORT, PAPER, RESULTS, ROOT
 
-DOCS = os.path.join(ROOT, "docs")
-os.makedirs(DOCS, exist_ok=True)
 
 
 def jload(p):

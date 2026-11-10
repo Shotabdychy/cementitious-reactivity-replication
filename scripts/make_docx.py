@@ -3,7 +3,7 @@
 Every number is read from results/*.json or results/*.csv; the only values typed here are the
 paper's own reported figures (marked as such) and fixed facts about the original repository.
 
-usage: python make_docx.py [--out docs/REPLICATION_REPORT_FINAL.docx]
+usage: python make_docx.py [--out report/REPLICATION_REPORT_FINAL.docx]
 """
 import os
 import re
@@ -29,7 +29,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RES = os.path.join(ROOT, "results")
 FIG = os.path.join(ROOT, "figures")
 ap = argparse.ArgumentParser()
-ap.add_argument("--out", default=os.path.join(ROOT, "docs", "REPLICATION_REPORT_FINAL.docx"))
+ap.add_argument("--out", default=os.path.join(ROOT, "report", "REPLICATION_REPORT_FINAL.docx"))
 ap.add_argument("--author", default=None, help="author name; a placeholder is printed if omitted")
 ap.add_argument("--repl-url", default="https://github.com/Shotabdychy/cementitious-reactivity-replication",
                 help="URL of the replication repository (supplied by the report author)")
