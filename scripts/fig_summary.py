@@ -26,7 +26,7 @@ os.makedirs(FIG, exist_ok=True)
 
 INK, INK2, GRID = "#1b1b1b", "#55555a", "#e3e2de"
 C_PAPER, C_FAITH, C_MOD, C_GROUP = "#6b6b70", "#eb6834", "#2a78d6", "#1baf7a"
-plt.rcParams.update({"font.family": "sans-serif", "font.size": 9, "axes.edgecolor": GRID,
+plt.rcParams.update({"font.family": "sans-serif", "font.size": 9, "axes.edgecolor": GRID, "axes.unicode_minus": False,
                      "axes.labelcolor": INK, "text.color": INK, "xtick.color": INK2,
                      "ytick.color": INK2, "figure.facecolor": "white", "savefig.facecolor": "white"})
 
@@ -46,41 +46,58 @@ faith = [J(os.path.basename(p)) for p in glob.glob(os.path.join(RES, "nb9_faithf
 tuned, grouped = J("nb9_sound_tuned.json"), J("nb9_grouped_material.json")
 
 # ------------------------------------------------------------------ figure 1
-fig, axes = plt.subplots(1, 3, figsize=(10.2, 3.6), sharey=True)
-for ax, t in zip(axes, T):
-    f = np.array([r["test"][t]["R2"] for r in faith])
-    e, g = tuned["ensemble_test"][t], grouped["ensemble_test"][t]
-    bars = [("Paper", PAPER[t], None, C_PAPER),
-            ("Released\ncode", f.mean(), (f.std(ddof=1), f.std(ddof=1)), C_FAITH),
-            ("Modified\nprotocol", e["R2"], (e["R2"] - e["R2_lo"], e["R2_hi"] - e["R2"]), C_MOD),
-            ("New\nmaterials", g["R2"], (g["R2"] - g["R2_lo"], g["R2_hi"] - g["R2"]), C_GROUP)]
-    for i, (lab, v, err, col) in enumerate(bars):
-        ax.bar(i, v, color=col, width=0.62, zorder=3)
-        if err:
-            ax.errorbar(i, v, yerr=[[err[0]], [err[1]]], color=INK, capsize=3, lw=1, zorder=4)
-        top = v + (err[1] if err else 0)
-        bottom = v - (err[0] if err else 0)
-        y = top + 0.03 if v >= 0 else bottom - 0.03
-        ax.text(i, y, f"{v:.3f}".replace("-", "−"), ha="center", va="bottom" if v >= 0 else "top",
-                fontsize=8.5, fontweight="bold")
-    ax.axhline(0, color=INK2, lw=0.8, zorder=2)
-    ax.set_xticks(range(4))
-    ax.set_xticklabels([b[0] for b in bars], fontsize=8.6)
-    n = tuned["labels_test"][t]
-    ax.set_title(f"{TITLE[t]}  (test labels: {n})", fontsize=9.5, fontweight="bold")
-    ax.set_ylim(-0.75, 1.12)
-    ax.grid(axis="y", color=GRID, lw=0.6, zorder=0)
-    for s_ in ("top", "right"):
-        ax.spines[s_].set_visible(False)
-axes[0].set_ylabel("test R²")
-fig.suptitle("Published vs reproduced accuracy (test R²)", fontsize=10.5, fontweight="bold", y=0.995)
-fig.text(0.5, 0.012, "Released code = notebook 9 as published, mean of 11 runs (bar: SD).   "
-         "Modified protocol = 11-seed ensemble with the fixes described in the report (bar: 95% bootstrap CI).\n"
-         "New materials = same protocol, but no material is shared between train and test.",
-         ha="center", fontsize=8, color=INK2, linespacing=1.5)
-fig.tight_layout(rect=(0, 0.09, 1, 0.95))
-fig.savefig(os.path.join(FIG, "fig_summary_r2.png"), dpi=200)
-plt.close(fig)
+def draw_summary(path, figsize, k, dpi, titles):
+    fig, axes = plt.subplots(1, 3, figsize=figsize, sharey=True)
+    for ax, t in zip(axes, T):
+        f = np.array([r["test"][t]["R2"] for r in faith])
+        e, g = tuned["ensemble_test"][t], grouped["ensemble_test"][t]
+        bars = [("Paper", PAPER[t], None, C_PAPER),
+                ("Released\ncode", f.mean(), (f.std(ddof=1), f.std(ddof=1)), C_FAITH),
+                ("Modified\nprotocol", e["R2"], (e["R2"] - e["R2_lo"], e["R2_hi"] - e["R2"]), C_MOD),
+                ("New\nmaterials", g["R2"], (g["R2"] - g["R2_lo"], g["R2_hi"] - g["R2"]), C_GROUP)]
+        for i, (lab, v, err, col) in enumerate(bars):
+            ax.bar(i, v, color=col, width=0.62, zorder=3)
+            if err:
+                ax.errorbar(i, v, yerr=[[err[0]], [err[1]]], color=INK, capsize=3, lw=1, zorder=4)
+            top = v + (err[1] if err else 0)
+            bottom = v - (err[0] if err else 0)
+            y = top + 0.03 if v >= 0 else bottom - 0.03
+            ax.text(i, y, f"{v:.3f}", ha="center", va="bottom" if v >= 0 else "top",
+                    fontsize=8.5 * k, fontweight="bold")
+        ax.axhline(0, color=INK2, lw=0.8, zorder=2)
+        if titles:
+            ax.set_xticks(range(4))
+            ax.set_xticklabels([b[0] for b in bars], fontsize=8.6 * k)
+        else:
+            ax.set_xticks([])          # compact version: a colour legend replaces the tick labels
+        n = tuned["labels_test"][t]
+        ttl = f"{TITLE[t]}  (test labels: {n})" if titles else f"{TITLE[t]} (n = {n})"
+        ax.set_title(ttl, fontsize=9.5 * k, fontweight="bold")
+        ax.set_ylim(-0.75, 1.12)
+        ax.grid(axis="y", color=GRID, lw=0.6, zorder=0)
+        for s_ in ("top", "right"):
+            ax.spines[s_].set_visible(False)
+    axes[0].set_ylabel("test R²")
+    if titles:
+        fig.suptitle("Published vs reproduced accuracy (test R²)", fontsize=10.5 * k, fontweight="bold", y=0.995)
+    if titles:
+      fig.text(0.5, 0.012, "Released code = notebook 9 as published, mean of 11 runs (bar: SD).   "
+             "Modified protocol = 11-seed ensemble with the fixes described in the report (bar: 95% bootstrap CI).\n"
+             "New materials = same protocol, but no material is shared between train and test.",
+             ha="center", fontsize=8 * k, color=INK2, linespacing=1.5)
+    if not titles:
+        from matplotlib.patches import Patch
+        fig.legend(handles=[Patch(color=c, label=l.replace("\n", " ")) for l, _, _, c in bars],
+                   loc="lower center", ncol=4, frameon=False, fontsize=8 * k, handlelength=1.2,
+                   columnspacing=1.6)
+    fig.tight_layout(rect=(0, 0.09, 1, 0.95) if titles else (0, 0.09, 1, 1))
+    fig.savefig(path, dpi=dpi)
+    plt.close(fig)
+
+
+
+draw_summary(os.path.join(FIG, "fig_summary_r2.png"), (10.2, 3.6), 1.0, 200, True)
+draw_summary(os.path.join(FIG, "fig_summary_report.png"), (6.3, 2.3), 0.85, 300, False)
 
 # ------------------------------------------------------------------ figure 2
 a = pd.read_csv(os.path.join(RES, "nb11_sound_tuned_ablation.csv"))

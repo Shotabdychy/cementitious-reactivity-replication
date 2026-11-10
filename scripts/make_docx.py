@@ -3,7 +3,7 @@
 Every number is read from results/*.json or results/*.csv; the only values typed here are the
 paper's own reported figures (marked as such) and fixed facts about the original repository.
 
-usage: python make_docx.py [--out report/REPLICATION_REPORT_FINAL.docx]
+usage: python make_docx.py [--out docs/REPLICATION_REPORT_FINAL.docx]
 """
 import os
 import re
@@ -38,6 +38,7 @@ args = ap.parse_args()
 ORIG_URL = "https://github.com/olivettigroup/Cementitious-reactivity-prediction-and-discovery"
 ORIG_COMMIT = "2340ec87eb3a8f5d564528f08a85f509887c811c"
 PAPER_URL = "https://www.nature.com/articles/s43246-025-00820-4"
+PAPER_DOI = "10.1038/s43246-025-00820-4"
 REPL_URL = args.repl_url
 AUTHOR = args.author or "[Author name]"
 REPL_PLACEHOLDER = "[replication repository URL: to be added after publication]"
@@ -196,8 +197,20 @@ def hyperlink(par, url, text, size=None):
 TOKEN = re.compile(r"(\*\*.+?\*\*|\*.+?\*|\[\[.+?\|.+?\]\])")
 
 
+DASHES = str.maketrans({"—": "-", "–": "-", "−": "-"})
+
+
+def lead_bold_only(t):
+    """Keep bold only for a label at the very start of a paragraph; drop it in the middle."""
+    if t.startswith("**") and "**" in t[2:]:
+        j = t.index("**", 2) + 2
+        return t[:j] + t[j:].replace("**", "")
+    return t.replace("**", "")
+
+
 def rich(par, text, size=None, bold=False):
-    """Mini-markup: **bold**, *italic*, [[url|label]]."""
+    """Mini-markup: **bold**, *italic*, [[url|label]]. Every dash is written as the plain keyboard hyphen."""
+    text = text.translate(DASHES)
     for part in TOKEN.split(text):
         if not part:
             continue
@@ -224,6 +237,7 @@ KEEP_LIMIT = 520     # characters; paragraphs shorter than this are never split 
 
 def P(text, keep=None, **kw):
     p = doc.add_paragraph()
+    text = lead_bold_only(text)
     rich(p, text, **kw)
     short = len(text) < KEEP_LIMIT if keep is None else keep
     p.paragraph_format.keep_together = short
@@ -231,11 +245,11 @@ def P(text, keep=None, **kw):
 
 
 def H1(t):
-    return doc.add_heading(t, level=1)
+    return doc.add_heading(t.translate(DASHES), level=1)
 
 
 def H2(t):
-    return doc.add_heading(t, level=2)
+    return doc.add_heading(t.translate(DASHES), level=2)
 
 
 def bullets(items, size=None):
@@ -248,7 +262,7 @@ def bullets(items, size=None):
         p.paragraph_format.keep_together = True
         for r in p.runs:
             r.font.name = FONT
-        rich(p, it, size=size)
+        rich(p, lead_bold_only(it), size=size)
 
 
 def caption(text, kind, num):
@@ -325,7 +339,7 @@ def picture(path, width_cm):
 
 # ============================================================ compact figures
 plt.rcParams.update({"font.family": "serif", "font.serif": ["Times New Roman", "DejaVu Serif"],
-                     "font.size": 7, "axes.linewidth": 0.6})
+                     "font.size": 7, "axes.linewidth": 0.6, "axes.unicode_minus": False})
 pred = C("nb9_sound_tuned_predictions.csv")
 fig, axes = plt.subplots(1, 3, figsize=(6.6, 1.95))
 for ax, t in zip(axes, T):
@@ -388,22 +402,20 @@ r = tp.add_run("Replicating a Data-Driven Screening Framework for Secondary and 
                "Reproducibility Assessment")
 r.bold = True
 r.font.size = Pt(14)
-ap_ = doc.add_paragraph()
-ap_.alignment = WD_ALIGN_PARAGRAPH.CENTER
-ap_.paragraph_format.space_after = Pt(1)
-rich(ap_, f"{AUTHOR} · Replication report prepared for Prof. Hessam · 10 November 2026", size=10)
 lp = doc.add_paragraph()
 lp.alignment = WD_ALIGN_PARAGRAPH.CENTER
 lp.paragraph_format.space_after = Pt(1)
 rich(lp, "**Original study:** Mahjoubi et al. (2025), ", size=10)
-hyperlink(lp, PAPER_URL, "Commun. Mater. 6, 99", 10)
-rich(lp, " · **Original code (authors’):** ", size=10)
-hyperlink(lp, ORIG_URL, "olivettigroup/Cementitious-reactivity-prediction-and-discovery", 10)
-rich(lp, f" (commit {ORIG_COMMIT[:7]})", size=10)
+hyperlink(lp, "https://doi.org/" + PAPER_DOI, "doi:" + PAPER_DOI, 10)
+lp1 = doc.add_paragraph()
+lp1.alignment = WD_ALIGN_PARAGRAPH.CENTER
+lp1.paragraph_format.space_after = Pt(1)
+rich(lp1, "**Original code:** ", size=10)
+hyperlink(lp1, ORIG_URL, ORIG_URL, 10)
 lp2 = doc.add_paragraph()
 lp2.alignment = WD_ALIGN_PARAGRAPH.CENTER
 lp2.paragraph_format.space_after = Pt(5)
-rich(lp2, "**Replication repository (this work):** ", size=10)
+rich(lp2, "**Replication repository:** ", size=10)
 if REPL_URL:
     hyperlink(lp2, REPL_URL, REPL_URL, 10)
 else:
@@ -542,9 +554,11 @@ rows = [
 table(["Row", "Heat release\n*R*² / RMSE", "Ca(OH)₂ consumption\n*R*² / RMSE",
        "Bound water\n*R*² / RMSE"], rows, [5.6, 3.5, 3.7, 3.1], size=8, shade_rows=(3,))
 doc.add_paragraph().paragraph_format.space_after = Pt(0)
-picture(parity_png, 15.6)
-caption("Measured versus predicted values for the tuned 11-seed ensemble (training and test rows; "
-        "the dashed line is the identity). Test statistics are those of Table 1.", "Figure", 1)
+picture(os.path.join(FIG, "fig_summary_report.png"), 15.9)
+caption("Published and reproduced test R² for the three targets (n = labelled test rows). Released code: "
+        "notebook 9 as published, mean of 11 runs (bar: SD). Modified protocol: tuned 11-seed ensemble "
+        "(bar: 95 % bootstrap CI). New materials: the same protocol with no material shared between "
+        "training and test.", "Figure", 1)
 # ============================================================ PAGE 4: literature + screening
 H1("4. Literature Extraction and Material Screening")
 H2("4.1 Extraction demonstration with a substitute model")
@@ -561,12 +575,11 @@ P(f"**Two comparisons, two table sets.** Against the *manual ground truth* (Data
   f"{v1['cells_exact']} of {v1['cells_both_present']} cells agree; this uses rows 191, 105 and 1, because "
   f"row 107 has no pairable rows (Dataset 1 collapsed its 14 cements into five designations). "
   f"The two counts therefore overlap in rows 191 and 1 only and should not be compared with each other. "
-  f"The single disagreement in either comparison is the MgO of sample SNM 7: the source table gives "
-  f"1.57, while both the manual ground truth and Dataset 1 record 1.87. For material typing, the "
-  f"substitute classifier agreed with the manual top-level type on {d3['n_agree']} of {d3['n']} unseen "
-  f"Dataset 3 rows ({100 * d3['accuracy']:.0f} %; the paper reports 97 %), an indicative figure only: "
-  f"Dataset 3 labels are free text ({d3['n_distinct_full_labels']} distinct values), not the predefined "
-  f"types the Supplementary Information describes.")
+  f"The single disagreement in either is the MgO of sample SNM 7: the source table gives 1.57, while "
+  f"both the manual ground truth and Dataset 1 record 1.87. Material typing agreed with the manual "
+  f"top-level type on {d3['n_agree']} of {d3['n']} unseen Dataset 3 rows ({100 * d3['accuracy']:.0f} %; "
+  f"paper: 97 %), indicative only because Dataset 3 labels are free text "
+  f"({d3['n_distinct_full_labels']} distinct values), not the predefined types.")
 caption("Extraction of the four composition tables with the substitute model. “Cells” are (material, "
         "oxide) pairs with a value on both sides; the two comparisons use different tables (see text).",
         "Table", 2)
@@ -611,19 +624,18 @@ pm, pd1 = WE["predictions"]["mine"], WE["predictions"]["dataset1_row"]
 rows5 = [
     ["Material type", f"{WE['my_category']} (Dataset 1: {WE['dataset1_category']})",
      "assigned from name, caption and descriptor before any label was read"],
-    ["d50", f"{mi['d50']:g} μm", "notebook-10 constant for fly ashes"],
     ["Specific gravity", f"{mi['S gravity']:.2f} g/cm³ (imputed)",
      f"not extracted; the table lists {WE['table_density_g_cm3_not_extracted']} g/cm³, unused"],
     ["Amorphous content", f"{mi['Amorphous content']:.1f} % (imputed)", "absent from the table; LightGBM imputation"],
-    ["Mix and conditions", "Ca(OH)₂ 3, CaCO₃ 0, water 3.6, K₂SO₄ 0, KOH 0.151 per g; 50 °C; 10 d",
+    ["Fixed inputs", f"d50 {mi['d50']:g} μm; Ca(OH)₂ 3, CaCO₃ 0, water 3.6, K₂SO₄ 0, KOH 0.151 per g; 50 °C; 10 d",
      "notebook-10 constants, not the table"],
     ["Predicted heat release, Ca(OH)₂ consumption, bound water",
      f"{pm['heat']:.1f} J/g, {pm['CH']:.1f} g/100 g, {pm['BW']:.1f} g/100 g "
      f"({pd1['heat']:.1f}, {pd1['CH']:.1f}, {pd1['BW']:.1f})", "11-seed tuned ensemble mean"],
 ]
 table(["Item", "Value", "Basis"], rows5, [4.3, 6.6, 5.0], size=8, left_cols=3)
-picture(os.path.join(FIG, "fig_workflow.png"), 11.2)
-caption("Extraction-to-prediction workflow used in the demonstration; Tables 4–5 follow HL1 through it.", "Figure", 2)
+picture(os.path.join(FIG, "fig_workflow.png"), 12.5)
+caption("Extraction-to-prediction workflow used in the demonstration; Tables 4-5 follow HL1 through it.", "Figure", 2)
 H2("4.2 Literature materials and natural-rock screening")
 P(f"For the 14,429 literature materials the ensemble reproduces the qualitative ordering reported by "
   f"the paper: metakaolin has the highest median heat release ({cat.loc['Metakaolin','heat_median']:.0f} J/g; "
@@ -659,23 +671,20 @@ table(["Change to the notebook", "Reactive samples", "vs. paper"], rr, [8.6, 3.6
 # ============================================================ PAGE 5: reproducibility assessment
 H1("5. Reproducibility Assessment and Discussion")
 bullets([
-    "**Early stopping.** The notebook monitors a batch-averaged normalised RMSE for the Ca(OH)₂ head. "
-    "With 192 Ca(OH)₂ labels in 1,849 rows, a 50-row validation batch usually holds none or one label, "
-    "so the metric is NaN or of order 10⁶, and the restored epoch is not meaningful.",
+    "**Early stopping.** The notebook monitors a normalised RMSE for the Ca(OH)₂ head, averaged over "
+    "validation batches of 50 rows. With 192 labels in 1,849 rows most batches hold none or one label, "
+    "so the metric is NaN or of order 10⁶ and the restored epoch is not meaningful.",
     "**Splitting and preprocessing.** The stratification key is built on unstandardised targets but "
-    "applied to standardised ones, giving six classes (sizes 9 to 1,310). The scaler and target "
-    "standardisation are fitted on all rows before the split, and validation is the last 15 % of the "
-    "training array.",
-    "**Provenance.** The saved notebook carries about 1,050 executions with data cells numbered "
-    "1–34 and model cells 1,044–1,052, and depends on state from an earlier session; the "
-    "model-selection protocol is not specified. Keras Tuner is cited in the paper but no tuner call "
-    "appears in the released notebook.",
-    "**Rock screening.** Notebook 11 scores every row, including 328,466 samples with no measured oxide; "
-    "it contains no pozzolanic/hydraulic rule, no rock-name grouping, and does not use Dataset 5, "
-    "although the paper describes it. The screening mix differs from the R³ mix recorded in Dataset 4.",
-    "**Published datasets.** Dataset 2 row 105 has a ground truth that belongs to another table, row 191 "
-    "has unquoted commas that destroy material names, Dataset 3 labels are free text, and the "
-    "Supplementary Information’s row counts for Datasets 3 and 4 differ from the files.",
+    "applied to standardised ones (six classes), the scaler and target standardisation are fitted on all "
+    "rows before the split, and validation is the last 15 % of the training array.",
+    "**Provenance.** The saved notebook records about 1,050 executions run out of order, and the "
+    "model-selection protocol is not specified; Keras Tuner is cited but no tuner call is present.",
+    "**Rock screening.** Notebook 11 scores every row (including 328,466 with no measured oxide), has no "
+    "pozzolanic/hydraulic rule or rock-name grouping, and does not use Dataset 5; its mix constants "
+    "differ from the R³ mix in Dataset 4.",
+    "**Published datasets.** Dataset 2 row 105 has a ground truth from another table, row 191 has "
+    "unquoted commas in material names, Dataset 3 labels are free text, and the row counts of Datasets 3 "
+    "and 4 differ from the Supplementary Information.",
 ], size=10.5)
 P(f"**Published versus reproduced.** Heat release is reproduced and the other two targets are "
   f"partially reproduced under the modified protocol; no faithful run reaches the published "
@@ -684,8 +693,8 @@ P(f"**Published versus reproduced.** Heat release is reproduced and the other tw
   f"amorphous content of rocks from {amo['mean']:.1f} % to {ab['d5']['amorphous']['mean']:.1f} % (the "
   f"measured rocks average {amo['dataset5_measured_mean']:.1f} %) and is the single change that lowers "
   f"the count most; the R³ mix multiplies it by about "
-  f"{abl_e.loc['mix','reactive'] / abl_e.loc['base','reactive']:.0f}. This shows the count’s "
-  f"sensitivity to these choices, not the authors’ actual procedure.")
+  f"{abl_e.loc['mix','reactive'] / abl_e.loc['base','reactive']:.0f}. These show the count’s "
+  f"sensitivity, not the authors’ procedure.")
 P(f"**Grouped validation.** When no material appears in both training and test, the ensemble gives "
   f"*R*² = {f3(g['heat release']['R2'])} (heat release), {f3(g['CH consumption']['R2'])} "
   f"(Ca(OH)₂ consumption, 95 % CI [{f3(g['CH consumption']['R2_lo'])}, "
@@ -693,8 +702,7 @@ P(f"**Grouped validation.** When no material appears in both training and test, 
   f"rows are still fitted at *R*² = {f3(grp['ensemble_train']['CH consumption']['R2'])} for Ca(OH)₂. "
   f"Dataset 4 has 1,849 rows but only 277 materials, mostly measured at several ages, so a row-level "
   f"split mainly measures interpolation between ages of materials already seen. The paper does not "
-  f"state its split, so this is not a correction of a published number but a measure of how much the "
-  f"split matters for the stated aim of screening new precursors.")
+  f"state its split, so this measures how much the split matters, not an error in a published number.")
 P(f"**Limitations.** (i) The effects of the individual protocol changes were not isolated. (ii) The "
   f"Ca(OH)₂ and bound-water test sets are small, so single *R*² values are noisy. (iii) The extractor "
   f"is a substitute and was run interactively, so no timing comparison is made. (iv) Python 3.8 was not "

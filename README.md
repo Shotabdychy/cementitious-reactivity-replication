@@ -27,7 +27,7 @@ authors' released code, compares the results with the paper, and documents what 
 | ---: | --- | --- |
 | 1 | **The released notebook 9 is unstable.** Ca(OH)₂ test R² averages 0.087 over 11 runs and its early stopping failed in 11 of 11. | [Results §1](#1-model-accuracy), [report §3.2](report/REPLICATION_REPORT_FINAL.pdf) |
 | 2 | **With a corrected training protocol the model reaches the published accuracy for heat release** (R² 0.947 vs 0.93) **and approaches it for the other two** (0.764 vs 0.85; 0.830 vs 0.89), though those two rest on only 38 and 56 test labels. | [Results §1](#1-model-accuracy) |
-| 3 | **It does not generalise to unseen materials:** with no material shared between train and test, Ca(OH)₂ R² drops to −0.061. | [Results §1](#1-model-accuracy) |
+| 3 | **It does not generalise to unseen materials:** with no material shared between train and test, Ca(OH)₂ R² drops to -0.061. | [Results §1](#1-model-accuracy) |
 | 4 | **The published rock count (50,569) was not reproduced:** 141,548 as released; no variant of the pipeline matches it. | [Results §4](#4-natural-rock-screening) |
 | 5 | **Extraction step works with a substitute model:** 240 of 241 oxide values match the manual ground truth. | [Results §5](#5-literature-extraction-demonstration) |
 
@@ -50,17 +50,17 @@ only some of them (heat release 264, Ca(OH)₂ 38, bound water
 | Modified protocol, released architecture, 11-seed ensemble | 0.956 / 29.14 | 0.776 / 14.78 | 0.844 / 1.70 |
 | **Modified protocol, tuned architecture, 11-seed ensemble** | **0.947 / 32.02** | **0.764 / 15.16** | **0.830 / 1.77** |
 |   95% CI of that ensemble (R²) | [0.933, 0.960] | [0.396, 0.905] | [0.669, 0.910] |
-| Tuned ensemble, **new materials** (no material shared by train and test) | 0.645 / 88.68 | −0.061 / 48.43 | 0.548 / 4.56 |
+| Tuned ensemble, **new materials** (no material shared by train and test) | 0.645 / 88.68 | -0.061 / 48.43 | 0.548 / 4.56 |
 | Test labels (row-level split / grouped split) | 264 / 311 | 38 / 45 | 56 / 59 |
 
-*"Released architecture" = 256–256–16 ReLU layers. "Tuned" = 512–256–32, dropout 0.2,
+*"Released architecture" = 256-256-16 ReLU layers. "Tuned" = 512-256-32, dropout 0.2,
 L2 0.001, learning rate 2.33×10⁻³, batch 128; chosen by 5-fold cross-validation on the
 training rows only (the test set was never used to choose anything).*
 
 **How to read this.**
 
 - **Released code as published:** all 11 runs trip a collapse rule defined on validation behaviour only
-  (monitored value 26.7–800, never below 1). The notebook's early-stopping metric is averaged over
+  (monitored value 26.7-800, never below 1). The notebook's early-stopping metric is averaged over
   validation batches of 50 rows; with only 192 Ca(OH)₂ labels in 1,849 rows, most batches hold none or one label, so
   the metric is NaN or about 10⁶ and the restored epoch is essentially arbitrary.
 - **Modified protocol** (my addition, not in the paper) changes four things at once: whole-validation-set early stopping,
@@ -90,7 +90,7 @@ gives a second view.*
 The paper states Python 3.8; only Python 3.11 was available, so **Python 3.8 was not used**. One faithful run was
 repeated with older libraries (TensorFlow 2.12.0, pandas 1.5.3): heat-release R² changed from
 0.781 to 0.871, but Ca(OH)₂ stayed at
-0.128 vs 0.127 — so the Ca(OH)₂ problem is
+0.128 vs 0.127 - so the Ca(OH)₂ problem is
 not a library-version effect.
 
 ### 3. Literature-extracted materials
@@ -143,7 +143,7 @@ Notebook 11 as released, scored with the ensemble over all 1,022,092 rock sample
 
 ### 5. Literature-extraction demonstration
 
-Notebooks 1–8 need a private paper corpus and the authors' fine-tuned OpenAI models, so they could not be run. As a
+Notebooks 1-8 need a private paper corpus and the authors' fine-tuned OpenAI models, so they could not be run. As a
 substitute, **Claude Opus 5** was given the notebook-4 prompt and the table text from Dataset 2 (replies written before
 any ground truth was read) and scored against two references. The substitute model measures the *task*, not the authors' system.
 
@@ -163,15 +163,15 @@ counts should not be compared with each other. The single disagreement in either
 source table gives 1.57, while both the manual ground truth and Dataset 1 record 1.87. Classification of material
 type agreed on 36 of 40 unseen Dataset 3 rows (90%; the paper reports 97%, on a different label scheme).
 
-**Worked example — material HL1, a high-lime fly ash** (the table captioned "Properties of cement and fly ashes used";
+**Worked example - material HL1, a high-lime fly ash** (the table captioned "Properties of cement and fly ashes used";
 table text and manual values from Dataset 2, DOI [`10.1016/s0008-8846(99)00160-x`](https://doi.org/10.1016/s0008-8846(99)00160-x) from the matching Dataset 1 rows,
-paper details from Crossref: M. Tokyay, *Cem. Concr. Res.* 29, 1737–1741, 1999). Oxide contents in wt%:
+paper details from Crossref: M. Tokyay, *Cem. Concr. Res.* 29, 1737-1741, 1999). Oxide contents in wt%:
 
 | Source | SiO₂ | Al₂O₃ | Fe₂O₃ | CaO | MgO | SO₃ | TiO₂ | MnO | K₂O | Na₂O | LOI |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Extracted (Claude Opus 5) | 43.3 | 25.1 | 4.9 | 20.3 | 0.8 | 2.5 | – | – | 1.3 | 0.2 | 1.19 |
-| Manual ground truth (Dataset 2) | 43.3 | 25.1 | 4.9 | 20.3 | 0.8 | 2.5 | – | – | 1.3 | 0.2 | 1.19 |
-| Authors' output (Dataset 1) | 43.3 | 25.1 | 4.9 | 20.3 | 0.8 | 2.5 | – | – | 1.3 | 0.2 | 1.19 |
+| Extracted (Claude Opus 5) | 43.3 | 25.1 | 4.9 | 20.3 | 0.8 | 2.5 | - | - | 1.3 | 0.2 | 1.19 |
+| Manual ground truth (Dataset 2) | 43.3 | 25.1 | 4.9 | 20.3 | 0.8 | 2.5 | - | - | 1.3 | 0.2 | 1.19 |
+| Authors' output (Dataset 1) | 43.3 | 25.1 | 4.9 | 20.3 | 0.8 | 2.5 | - | - | 1.3 | 0.2 | 1.19 |
 | Model input after imputation (*italic* = imputed) | 43.3 | 25.1 | 4.9 | 20.3 | 0.8 | 2.5 | *1.18* | *0.17* | 1.3 | 0.2 | 1.19 |
 
 TiO₂, MnO, specific gravity (2.66 g/cm³) and amorphous content (54.2%) are not in the table
@@ -189,7 +189,7 @@ and were imputed; d50 (8.88 µm) and the mix and test conditions are the noteboo
 
 | Stage | Notebooks | Status |
 |---|---|---|
-| Literature filtering, table and sentence retrieval | 1–3, 6 | **Not run** — needs the group's private paper corpus |
+| Literature filtering, table and sentence retrieval | 1-3, 6 | **Not run** - needs the group's private paper corpus |
 | Table extraction, material typing | 4, 5, 7, 8 | **Demonstrated on a sample** with a substitute model (Section 5) |
 | Reactivity network | 9 | **Run**: as published, "clean", and modified protocol with tuning, 11 seeds, ensemble, grouped splits |
 | Literature materials | 10 | **Run** with the ensemble |
@@ -230,7 +230,7 @@ architecture and loss weights as published, and says so in its docstring.
 | `nb9_tune.py` | KerasTuner random search, 5-fold CV on training rows only |
 | `nb9_final.py` | modified protocol: N seeds, ensemble, bootstrap CIs, grouped splits |
 | `nb10_run.py`, `nb11_ablation.py` | notebooks 10 and 11 with the ensemble; the rock ablation |
-| `figures.py`, `fig_workflow.py`, `fig_summary.py` | figures |
+| `figures.py`, `fig_summary.py` | figures (the workflow diagram `figures/fig_workflow.png` is a supplied image, not generated) |
 | `few_papers_*.py`, `worked_example.py` | extraction demonstration and the HL1 example |
 | `make_tables.py`, `make_docx.py`, `docx_to_pdf.ps1` | summary tables; the report (Word is needed for the PDF export) |
 | `compare_runs.py`, `run_*.sh` | clean-start verification; batch runners |
@@ -248,7 +248,7 @@ pip install -r environment/requirements.txt
 **2. Inputs.** Put the supplementary datasets in `data/supplementary/` and the Gard et al. rock tables in `data/gard/`
 (or set `REPL_DATA` and `REPL_GARD`). See [`data/README.md`](data/README.md).
 
-**3. Run** (from `scripts/`; seeds are 42 and 1–10, outer split seed 0, bootstrap seed 7)
+**3. Run** (from `scripts/`; seeds are 42 and 1-10, outer split seed 0, bootstrap seed 7)
 
 ```bash
 python nb9_faithful.py faithful 42                       # notebook 9 as published (repeat for seeds 1-10)
