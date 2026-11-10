@@ -16,7 +16,7 @@ From the Supplementary Information of Mahjoubi et al. (2025), <https://www.natur
 
 ## Rock database (put in `data/gard/`, or set `REPL_GARD`)
 
-Gard, M., Hasterok, D. & Halpin, J. A. *Global whole-rock geochemical database compilation*, Earth Syst. Sci. Data 11, 1553–1566 (2019); use the data release cited in that paper. Required tables: `sample.csv`, `major.csv`, `rockgroup.csv`, `country.csv`, `reference.csv` (1,022,092 samples after merging on their own keys).
+Gard, M., Hasterok, D. & Halpin, J. A. *Global whole-rock geochemical database compilation*, Earth Syst. Sci. Data 11, 1553-1566 (2019); use the data release cited in that paper. Required tables: `sample.csv`, `major.csv`, `rockgroup.csv`, `country.csv`, `reference.csv` (1,022,092 samples after merging on their own keys).
 
 ## Files the original repository does not contain, and how they were reconstructed
 
@@ -28,4 +28,4 @@ Gard, M., Hasterok, D. & Halpin, J. A. *Global whole-rock geochemical database c
 | `90andupnewones.keras`, `90andupnewonesch.keras` | Retrained: `nb9_faithful.py` (as released) and `nb9_final.py` (modified protocol) | Comparisons with values the authors saved are untestable |
 | Pozzolanic/hydraulic rule, rock-name grouping, row filter for rocks with no composition | Not reconstructable; the report states which rules are mine | Reported as sensitivity analyses only |
 
-The authors' private paper corpus (notebooks 1–3, 6) and fine-tuned OpenAI endpoints (notebooks 4, 7, 8) cannot be reconstructed; see the report, Section 4.1.
+The authors' private paper corpus (notebooks 1-3, 6) and fine-tuned OpenAI endpoints (notebooks 4, 7, 8) cannot be reconstructed; see the report, Section 4.1.
